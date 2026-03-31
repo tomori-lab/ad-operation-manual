@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>広告出稿マニュアル</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif; display: flex; min-height: 100vh; color: #333; }
+
+    /* サイドバー */
+    .sidebar {
+      width: 280px;
+      min-width: 280px;
+      background: #1a1a2e;
+      color: #fff;
+      padding: 24px 0;
+      overflow-y: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+    }
+    .sidebar h1 {
+      font-size: 18px;
+      padding: 0 20px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 12px;
+    }
+    .sidebar .category {
+      padding: 8px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 16px;
+    }
+    .sidebar a {
+      display: block;
+      padding: 10px 20px 10px 28px;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.15s;
+      border-left: 3px solid transparent;
+    }
+    .sidebar a:hover {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+    .sidebar a.active {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border-left-color: #4fc3f7;
+    }
+
+    /* メインコンテンツ */
+    .main {
+      margin-left: 280px;
+      flex: 1;
+      padding: 40px 60px;
+      max-width: 900px;
+    }
+    .main h1 { font-size: 28px; margin-bottom: 8px; color: #1a1a2e; }
+    .main h2 { font-size: 22px; margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; color: #1a1a2e; }
+    .main h3 { font-size: 17px; margin: 24px 0 8px; color: #333; }
+    .main p { line-height: 1.8; margin-bottom: 12px; }
+    .main ul, .main ol { margin: 8px 0 16px 24px; line-height: 1.8; }
+    .main li { margin-bottom: 4px; }
+    .main code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .main pre {
+      background: #f5f5f5;
+      padding: 16px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 12px 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .main table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+      font-size: 14px;
+    }
+    .main th, .main td {
+      border: 1px solid #ddd;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .main th { background: #f5f5f5; font-weight: 600; }
+    .main blockquote {
+      border-left: 4px solid #4fc3f7;
+      padding: 12px 16px;
+      margin: 12px 0;
+      background: #f8fbff;
+      color: #555;
+      line-height: 1.8;
+    }
+    .main .checklist { list-style: none; margin-left: 0; }
+    .main .checklist li { padding: 6px 0; }
+    .main .checklist li::before { content: "☐ "; color: #999; }
+    .note {
+      background: #fff8e1;
+      border-left: 4px solid #ffb300;
+      padding: 12px 16px;
+      margin: 12px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .section { display: none; }
+    .section.active { display: block; }
+
+    @media (max-width: 768px) {
+      .sidebar { width: 100%; height: auto; position: relative; }
+      .main { margin-left: 0; padding: 20px; }
+      body { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <h1>📋 出稿マニュアル</h1>
+
+  <div class="category">はじめに</div>
+  <a href="#" data-section="intro" class="active">出稿の全体像</a>
+
+  <div class="category">Meta（Facebook）</div>
+  <a href="#" data-section="meta-flow">基本フロー</a>
+  <a href="#" data-section="meta-types">種類別差分</a>
+  <a href="#" data-section="meta-check">チェックリスト</a>
+
+  <div class="category">TikTok</div>
+  <a href="#" data-section="tiktok-flow">基本フロー</a>
+  <a href="#" data-section="tiktok-types">種類別差分</a>
+  <a href="#" data-section="tiktok-check">チェックリスト</a>
+</nav>
+
+<main class="main">
+
+<!-- ========== はじめに ========== -->
+<div id="intro" class="section active">
+<h1>出稿マニュアル — はじめに</h1>
+<p>新人運用者が出稿業務を1から覚えるためのマニュアル。<br>「なぜそうするのか」を理解した上で、正確に出稿できるようになることがゴール。</p>
+
+<h2>出稿とは</h2>
+<p>Meta、TikTok、Xなどの媒体で<strong>広告の配信設計を行うこと</strong>。</p>
+<ul>
+  <li>どんな広告を流したいか</li>
+  <li>どんな人に配信したいか（年齢、地域、性別など）</li>
+</ul>
+<p>を設定して、広告を世に出す作業。</p>
+
+<h2>なぜ出稿が重要なのか</h2>
+<pre>案件選定 → 制作 → 運用（出稿） → 分析 → 制作に戻る</pre>
+<ul>
+  <li>運用者は「制作 → 分析」のサイクルを回すことが本業</li>
+  <li>出稿を巻き取ることで、運用者がより制作に注力でき、売上が上がる</li>
+  <li><strong>出稿の正確さが、計測の正確さに直結する</strong> → ミスると成果が測れなくなる</li>
+</ul>
+
+<h2>売上が生まれるまでの流れ</h2>
+<pre>ユーザー（SNSを見ている人）
+→ クリエイティブ（広告）が流れてくる
+→ クリックすると記事に飛ぶ（自社で作成）
+→ 記事を見て次のボタンをクリック
+→ LP（クライアントの予約フォーム）
+→ 予約完了
+→ サンクスページ到達 = コンバージョン（CV）発生</pre>
+<ul>
+  <li>1CV = 単価分の売上（例: 単価2万円なら1CV = 2万円）</li>
+  <li>利益 = 単価 - 消化金額（広告に使った費用）</li>
+  <li><strong>消化金額を抑えてCVを取るほど利益が大きくなる</strong></li>
+</ul>
+
+<h2>キャンペーン・広告セット・広告の構造</h2>
+<pre>キャンペーン
+└── 広告セット
+    └── 広告</pre>
+<table>
+  <tr><th>階層</th><th>役割</th><th>設定するもの</th></tr>
+  <tr><td>キャンペーン</td><td>箱</td><td>名前、予算</td></tr>
+  <tr><td>広告セット</td><td>ターゲティング</td><td>年齢、性別、地域、開始日</td></tr>
+  <tr><td>広告</td><td>配信物</td><td>CR（動画）、記事URL、ページ</td></tr>
+</table>
+<p>この3つが全て設定されて初めて広告が配信される。基本は<strong>翌日0時から</strong>配信開始。</p>
+
+<h2>心構え</h2>
+<ol>
+  <li><strong>分からないことがあったら何でも聞く</strong> — アド管理メンバー、他のアルバイト、依頼者（運用者）に遠慮なく</li>
+  <li><strong>不明点をそのままにしない</strong> — なんとなくで作ると損失が生まれる。聞いたことで責められることは絶対にない</li>
+  <li><strong>最初のうちは速さより正確さ</strong> — 慣れたら勝手に早くなる。焦らなくて大丈夫</li>
+</ol>
+</div>
+
+<!-- ========== Meta出稿 基本フロー ========== -->
+<div id="meta-flow" class="section">
+<h1>Meta（Facebook）出稿 — 基本フロー</h1>
+<p>Meta広告の出稿を、依頼を受けてから公開するまでの一連の流れ。出稿の種類に関わらず共通する基本フロー。</p>
+
+<h2>出稿の全体像</h2>
+<pre>CR数と設計数確認 → CRアップロード → Beyond記事作成 → キャンペーン作成 → 広告セット設定 → 広告設定 → 確認 → 公開</pre>
+<blockquote>
+  <strong>なぜこの順番なのか:</strong><br>
+  CRアップロードは時間がかかる → 先に開始して、待ち時間でBeyond記事を作るのが効率的。<br>
+  キャンペーン → 広告セット → 広告は階層構造。上から順に作らないと下が作れない。
+</blockquote>
+
+<h2>Step 0: 依頼の確認</h2>
+<h3>やること</h3>
+<p>出稿依頼スプシで自分の名前が入っている依頼を確認する。</p>
+<h3>確認する情報</h3>
+<table>
+  <tr><th>項目</th><th>スプシの列</th><th>確認ポイント</th></tr>
+  <tr><td>案件名</td><td>-</td><td>どのクライアント・メニューか</td></tr>
+  <tr><td>媒体</td><td>-</td><td>Meta / TikTok / X 等</td></tr>
+  <tr><td>CR数</td><td>-</td><td>何本のクリエイティブを出すか</td></tr>
+  <tr><td>設計パターン</td><td>-</td><td>冒頭 / 年齢別 / 地域別 等</td></tr>
+  <tr><td>キャンペーン名</td><td>F列</td><td>命名規則に従っているか</td></tr>
+  <tr><td>予算設定</td><td>N列・P列</td><td>キャンペーン予算 or セット予算、金額</td></tr>
+  <tr><td>ピクセル・CV設定</td><td>U列</td><td>データセット・コンバージョンイベント・アトリビューション</td></tr>
+</table>
+<blockquote>
+  配信設定が適切に行われないとCVが発生しない。<br>
+  例：男性用の脱毛サロンの広告を女性に配信してしまったら、クリエイティブが無駄になる。<br>
+  <strong>最初のうちは速さより正確さ。</strong>
+</blockquote>
+<div class="note">
+  <strong>不明点があったら:</strong> そのままにしない。確認先は依頼者（運用者）、アド管理メンバー、他のアルバイト。聞いたことで責められることは絶対にない。<strong>聞かずにミスる方が問題。</strong>
+</div>
+
+<h2>Step 1: CRアップロード</h2>
+<p>CRをGoogleドライブからダウンロードし、Meta広告マネージャーのメディアライブラリにアップロードする。</p>
+<ol>
+  <li>出稿したいクリエイティブをGoogleドライブからダウンロードする</li>
+  <li>ビジマネの左上「キャンペーン」に出稿したいアカウント名を検索する</li>
+  <li>左の三本線メニュー → <strong>メディアライブラリ</strong>を開く</li>
+  <li>「広告アカウントのメディア」→ <strong>Select Ad Account</strong> → アカウント名を検索して選択</li>
+  <li><strong>動画</strong> → <strong>Add Media</strong> → <strong>Add video</strong> → ダウンロードしたCRをアップロード</li>
+  <li>緑になって「OK」が出ればアップロード完了</li>
+</ol>
+<h3>ビジマネとアカウントの関係</h3>
+<p>アカウントがどのビジマネに属するかは、<strong>アカウント名の先頭の数字</strong>で判断する。</p>
+<p>例: <code>3-001_TCB-クマ再生注射女性-静止画</code> → <strong>Business03</strong></p>
+<div class="note">FBは基本的に<strong>動画のみ</strong>。アップロードには時間がかかる → <strong>待ち時間でStep 2のBeyond記事作成を進める。</strong></div>
+
+<h2>Step 2: Beyond記事作成</h2>
+<p>記事ページを複製し、アフィリンクを設定する。</p>
+<blockquote>
+  <strong>なぜアフィリンクを分けるのか:</strong><br>
+  キャンペーンごとに遷移先のURLを分けている。中身は同じだがURLが違う。<br>
+  <strong>理由: 効果測定を正確にするため。</strong><br>
+  2種類のキャンペーンで最終的な遷移先が同じだと、CVが発生してもどちらのキャンペーンの成果か測定できなくなる。
+</blockquote>
+<ol>
+  <li>Beyondにログインする</li>
+  <li>該当案件のフォルダを開く</li>
+  <li>複製元の記事を複製 → キャンペーン名に修正する</li>
+  <li><strong>version</strong>を開く（別タブで開いた方が楽）</li>
+  <li>「リンク置換」マークを開く → 全て選択 → スプシのアフィリンクを入力 → <strong>置換</strong></li>
+  <li><strong>更新ボタン</strong>を押す（オレンジ → 青になればOK）</li>
+  <li>元のタブに戻って「記事URL」をコピーする</li>
+  <li>スプシに貼り付ける</li>
+  <li>ドライブURL抽出にドライブURLを貼って実行する</li>
+</ol>
+<h3>ポップアップ記事の場合</h3>
+<ol>
+  <li>アフィリンク置換・更新 → 左の「ポップアップ」を選択</li>
+  <li>該当のversionを選択 → リンク＋ → 出てきたリンクを選択</li>
+  <li>本番反映を押して完了 → 戻って記事URLをコピーする</li>
+</ol>
+
+<h2>Step 3: キャンペーン作成</h2>
+<h3>新規作成の場合</h3>
+<ol>
+  <li>キャンペーンを作成する</li>
+  <li>キャンペーンの目的を選択 → <strong>手動作成の売上キャンペーン</strong></li>
+  <li>設計数に合わせて広告セット・広告数を作成する（3つの点 → 複製 → 既存のキャンペーン → 複製したい数 → 複製する）</li>
+  <li>広告セット階層のオーディエンスを切り替える（Advantageオーディエンス → <strong>元のオーディエンスオプション</strong>に切り替え）</li>
+</ol>
+<h3>複製の場合（基本はこちらが多い）</h3>
+<ol>
+  <li>キャンペーン名にあるキーワードでキャンペーンを絞る（運用者名、年齢など）</li>
+  <li>キャンペーンの中身を確認して、似たキャンペーンを複製する</li>
+  <li>「現在の設定を使って複製」を選択</li>
+  <li>複製数は <strong>1</strong></li>
+  <li>キャンペーン名をスプシのF列の内容に修正する</li>
+  <li>キャンペーン詳細: <strong>売上</strong></li>
+  <li>スプシN列が「キャンペーン予算」なら、キャンペーン予算を<strong>ON</strong>にしてP列の金額を記入する</li>
+  <li>設計数に合わせて広告セット・広告数を増やす or 削除する</li>
+</ol>
+
+<h2>Step 4: 広告セット設定</h2>
+<h3>広告セット名の修正</h3>
+<ol>
+  <li>修正したい広告セットを全て選択 → 編集横の▼ → <strong>名前</strong></li>
+  <li>出稿内容によって広告セット名を変える:
+    <ul>
+      <li><strong>冒頭:</strong> 広告セット名 → CR名</li>
+      <li><strong>年齢別:</strong> 広告セット名 → 年齢</li>
+      <li><strong>地域別:</strong> 広告セット名 → 駅名（院＋駅名）</li>
+    </ul>
+  </li>
+</ol>
+<h3>広告セットの内容修正</h3>
+<ol start="3">
+  <li>全て選択 → <strong>編集</strong></li>
+  <li><strong>ウェブサイト</strong> → データセット・コンバージョンイベント・アトリビューション設定はスプシU列の内容を選択</li>
+  <li><strong>開始日</strong>は翌日の00:00</li>
+  <li><strong>地域・年齢・性別</strong>を設定する
+    <ul>
+      <li>年齢別: 広告セット名に合わせて年齢を修正 → 下書きとして保存</li>
+      <li>地域別: 1キャンペーンずつ地域（駅名）を選択。駅名で出てこなければ出稿依頼スプシの「店舗一覧」シートから住所検索</li>
+    </ul>
+  </li>
+</ol>
+<div class="note">
+  <strong>⚠️ 注意:</strong> セールスキャンペーンが使用できるアカウントでキャンペーン予算出稿する場合は、<strong>「提案として使用する」のチェックを外す</strong>。外さないと意図しないターゲティングに配信してしまう。
+</div>
+
+<h2>Step 5: 広告設定</h2>
+<h3>広告名の修正</h3>
+<p>広告名を広告セット名に合わせて修正する（例: 広告セット名が「52」なら、広告名も「52」）</p>
+<h3>ページ選択</h3>
+<p>出稿依頼シートに記載されているページ名、またはDBシートの「FBページ」シートで該当案件のページを検索</p>
+<h3>URL設定</h3>
+<ol>
+  <li>広告のURLを修正する: 全て選択 → 編集横の▼ → <strong>ウェブサイトURL</strong></li>
+  <li>Beyondで作成した記事URLを貼る → 下書きとして保存</li>
+</ol>
+<h3>リファラ設定</h3>
+<ol>
+  <li><strong>URLパラメーターを作成</strong>する</li>
+  <li>キャンペーンコンテンツの <code>{{ad.name}}</code> を選択する</li>
+</ol>
+<blockquote>リファラ = ユーザーがサイトにアクセスする際のリンク元ページ情報。どの広告経由でユーザーが来たかを追跡できる。</blockquote>
+<h3>CR設定</h3>
+<ol>
+  <li>広告を全選択 → 編集横の▼ → <strong>メディア</strong></li>
+  <li>修正したい広告を選択 → 広告名をコピー → 検索して該当CRを選択</li>
+  <li>出てきたCRを選択 → 次へ（重複時は<strong>一番左の新しいCR</strong>を選択）</li>
+  <li>CR全て修正したら<strong>下書きとして保存</strong></li>
+</ol>
+<div class="note"><strong>⚠️ 注意:</strong> グルグル（検索中）の状態だとエラーになる。動画が出てきた後に選択すること。</div>
+
+<h2>Step 6: 確認</h2>
+<p>広告まで作成できたら、依頼内容と一致しているか全項目を確認する。<br>
+詳細はサイドバーの「チェックリスト」を参照。</p>
+
+<h2>Step 7: 公開</h2>
+<ol>
+  <li>内容が問題なければ<strong>公開</strong>する</li>
+  <li>配信オフになっていたら配信を<strong>ON</strong>にする</li>
+  <li>出稿依頼スプシにチェックを入れる</li>
+  <li>運用者へ報告する</li>
+</ol>
+<div class="note">
+  <strong>注意:</strong><br>
+  ・CR待ちの場合: CR以外を作成・公開してCRを待つ（公開にしないと他の人が触れなくなるため）<br>
+  ・右上の「確認して公開」が残っていないか要注意 → 残っていたら正しく配信されていない
+</div>
+</div>
+
+<!-- ========== Meta出稿 種類別差分 ========== -->
+<div id="meta-types" class="section">
+<h1>Meta出稿 — 種類別差分</h1>
+<p>基本フローは共通で、<strong>種類ごとに一部の設定だけが異なる</strong>。ここでは差分だけをまとめる。</p>
+
+<h2>出稿種類の一覧</h2>
+<table>
+  <tr><th>種類</th><th>予算の場所</th><th>難易度</th><th>特徴</th></tr>
+  <tr><td>キャンペーン予算（冒頭）</td><td>キャンペーン階層</td><td>低</td><td>基本形。同じ設定で複数CRを検証</td></tr>
+  <tr><td>キャンペーン予算（年齢別）</td><td>キャンペーン階層</td><td>低</td><td>年齢セグメントごとに広告セットを分ける</td></tr>
+  <tr><td>キャンペーン予算（地域別）</td><td>キャンペーン階層</td><td>高</td><td>地域（駅名）ごとに広告セットを分ける</td></tr>
+  <tr><td>セット予算</td><td>広告セット階層</td><td>高</td><td>広告セットごとに予算を設定</td></tr>
+  <tr><td>tcpa</td><td>キャンペーン階層</td><td>高</td><td>単価の目標を設定して最適化</td></tr>
+  <tr><td>ASC</td><td>キャンペーン階層</td><td>中</td><td>Advantage+ ショッピングキャンペーン</td></tr>
+  <tr><td>セールスキャンペーン</td><td>キャンペーン階層</td><td>中</td><td>ASCでセグメント切りたい場合</td></tr>
+</table>
+
+<h2>キャンペーン予算（基本形）</h2>
+<p>基本フローそのまま。差分なし。</p>
+<ul>
+  <li>キャンペーン予算: <strong>ON</strong></li>
+  <li>予算金額: スプシP列の金額</li>
+</ul>
+
+<h2>セット予算</h2>
+<h3>キャンペーン階層</h3>
+<ul><li>キャンペーン予算: <strong>OFF</strong></li></ul>
+<h3>広告セット階層</h3>
+<ul><li>「1日の予算」に金額を入れる</li></ul>
+<blockquote>
+  <strong>なぜセット予算を使うのか:</strong>
+  広告セットごとに予算を個別管理したい場合に使う。キャンペーン予算だとMeta側が自動配分するが、セット予算なら各セグメントに均等に予算を使える。
+</blockquote>
+
+<h2>tcpa（Target Cost Per Action）</h2>
+<h3>キャンペーン階層</h3>
+<ul>
+  <li>キャンペーン予算: <strong>ON</strong></li>
+  <li>キャンペーン入札戦略: <strong>「単価の目標」</strong>に変更</li>
+</ul>
+<h3>広告セット階層</h3>
+<ul><li>「結果の単価目標」に金額を入れる</li></ul>
+<blockquote>
+  <strong>なぜtcpaを使うのか:</strong>
+  1件あたりの獲得コスト（CPA）を指定の金額に近づけるよう最適化する。予算を使い切ることより、指定した単価での獲得を優先する戦略。
+</blockquote>
+
+<h2>ASC（Advantage+ ショッピングキャンペーン）</h2>
+<h3>キャンペーン階層</h3>
+<ol><li>新規作成時に <strong>「Advantage+ ショッピングキャンペーン」</strong> を選択する</li></ol>
+<h3>広告セット階層</h3>
+<ol start="2"><li><strong>広告セット階層なし</strong>（ターゲティング設定なし）— MetaのAIが自動最適化</li></ol>
+<blockquote>
+  <strong>なぜASCを使うのか:</strong>
+  ターゲティングをMetaのアルゴリズムに任せることで、手動設定より広いリーチで効率的なCV獲得を狙う。
+</blockquote>
+
+<h2>セールスキャンペーン</h2>
+<p>ASCでセグメント（年齢・地域等）を切って配信したい場合に使う。</p>
+<div class="note">
+  <strong>前提条件:</strong><br>
+  ・セールスキャンペーンが使用できるアカウントは限られている<br>
+  ・1歳区切りでのキャンペーンでは使用できない
+</div>
+<p>基本的にはキャンペーン予算と同じ設定。追加で以下を行う:</p>
+<ol>
+  <li>広告セット階層の <strong>「広告のリーチを更に限定」</strong> を開く</li>
+  <li>設定を切り替える</li>
+  <li>ターゲティングがあればターゲティングを設定する</li>
+  <li>設定後に <strong>「提案として使用する」にチェック</strong>を入れる</li>
+</ol>
+<div class="note">
+  <strong>⚠️ 注意:</strong><br>
+  ・右のセールスキャンペーンが<strong>3つ全てON</strong>になっているか確認する（1つでも外れていたらオフ）<br>
+  ・逆にキャンペーン予算の通常出稿では「提案として使用する」の<strong>チェックを外す</strong>こと
+</div>
+</div>
+
+<!-- ========== Meta出稿 チェックリスト ========== -->
+<div id="meta-check" class="section">
+<h1>Meta出稿 — チェックリスト</h1>
+<p>出稿を公開する前に確認すべき全項目。<strong>出稿ミスは直接的な損失につながる。</strong>公開前の確認は省略しない。</p>
+
+<h2>キャンペーン階層の確認</h2>
+<ul class="checklist">
+  <li><strong>キャンペーン名</strong> — 左のキャンペーン名を選択し、スプシF列と一致しているか</li>
+  <li><strong>予算金額</strong> — キャンペーンの中の予算金額がスプシP列と一致しているか</li>
+</ul>
+
+<h2>広告セット階層の確認</h2>
+<p>広告セットを<strong>全選択</strong>して確認する。</p>
+<ul class="checklist">
+  <li><strong>データセット・コンバージョン・アトリビューション設定</strong> — スプシU列と一致しているか</li>
+  <li><strong>開始日</strong> — 翌日の00:00になっているか</li>
+  <li><strong>地域</strong> — 指定通りか（地域別の場合はセットごとに個別確認）</li>
+  <li><strong>年齢</strong> — 指定通りか（年齢別の場合はセットごとに個別確認）</li>
+  <li><strong>性別</strong> — 指定通りか</li>
+</ul>
+
+<h2>広告階層の確認</h2>
+<p>広告を<strong>全選択</strong>して確認する。</p>
+<ul class="checklist">
+  <li><strong>Facebookページ</strong> — 該当案件のページが選択されているか</li>
+  <li><strong>記事URL</strong> — BeyondのURLが正しく入っているか ※特に注意</li>
+  <li><strong>動画</strong> — 広告を選択して、入っている動画が正しいか</li>
+</ul>
+
+<h2>全体の確認</h2>
+<ul class="checklist">
+  <li><strong>CPN・広告セット・広告が全て選択されているか</strong></li>
+  <li><strong>配信ONになっているか</strong> — 全階層で確認</li>
+  <li><strong>該当のCPNが存在しているか</strong></li>
+</ul>
+
+<div class="note">
+  <strong>注意:</strong><br>
+  ・CR待ちの場合: CR以外を作成・公開してCRを待つ<br>
+  ・右上の「確認して公開」が残っていないか → 残っていたら正しく配信されていない
+</div>
+</div>
+
+<!-- ========== TikTok出稿 基本フロー ========== -->
+<div id="tiktok-flow" class="section">
+<h1>TikTok出稿 — 基本フロー</h1>
+<p>TikTok広告の出稿の一連の流れ。Meta出稿と似た構造だが、<strong>管理画面の操作とキャンペーン構造が異なる</strong>。</p>
+
+<h2>出稿の全体像</h2>
+<pre>CR数と設計数確認 → CRアップロード → Beyond記事作成 → キャンペーン作成 → 広告セット設定 → 広告設定 → 確認 → 公開</pre>
+<p>Metaとの主な違い:</p>
+<ul>
+  <li>CRアップロード先が<strong>クリエイティブライブラリ</strong></li>
+  <li>広告セットで<strong>プレースメント設定</strong>（TikTokのみON）が必要</li>
+  <li>広告に<strong>テキスト設定</strong>が必要</li>
+  <li>バルク出稿（Excel経由）という方法もある</li>
+</ul>
+
+<h2>Step 0: 依頼の確認</h2>
+<p>Meta出稿と同じ。出稿依頼スプシで自分の名前が入っている依頼を確認する。</p>
+
+<h2>Step 1: CRアップロード</h2>
+<ol>
+  <li><strong>TikTok広告マネージャー</strong>で出稿したいアカウント名を検索 → 選択</li>
+  <li>左上 <strong>ツール</strong> → <strong>クリエイティブライブラリ</strong>を選択</li>
+  <li><strong>アップロード</strong> → CRを入れる</li>
+</ol>
+
+<h2>Step 2: Beyond記事作成</h2>
+<p>Meta出稿と同じ手順。</p>
+
+<h2>Step 3: キャンペーン作成</h2>
+<ol>
+  <li>広告 → <strong>＋作成</strong></li>
+  <li><strong>売上</strong> → <strong>Webサイト</strong> → <strong>手動キャンペーン</strong>を選択</li>
+  <li>指定のキャンペーン名を入れる</li>
+  <li>キャンペーン予算最適化を<strong>ON</strong> → 予算を入れる</li>
+</ol>
+
+<h2>Step 4: 広告セット設定</h2>
+<ol>
+  <li>広告セット名を入れる（特に指定なし）</li>
+  <li><strong>手動プレースメント</strong>を選択 → <strong>TikTokのみON</strong>にする</li>
+  <li>ユーザーによるコメント・動画シェアを許可を<strong>OFF</strong>にする</li>
+  <li><strong>ロケーション・年齢・性別・言語</strong>を選択する</li>
+  <li><strong>開始日</strong>を指定する（翌日0時開始）</li>
+</ol>
+<div class="note"><strong>⚠️ 注意:</strong> プレースメントをTikTokにしないと別の場所に流れてしまう。必ず確認すること。</div>
+
+<h2>Step 5: 広告設定</h2>
+<ol>
+  <li><strong>動画を追加</strong> → 検索またはアップロードで動画を選択</li>
+  <li><strong>テキスト</strong>を選択する — テキストが出てくればそれを選択、出てこなければ<strong>「ここからのお申込限定」</strong>を入れる</li>
+  <li><strong>URL</strong>を入れる（Beyondで作成した記事URL）</li>
+</ol>
+
+<h2>Step 6: 確認 → 公開</h2>
+<p>内容問題なければ<strong>公開</strong>する。公開後:</p>
+<ol>
+  <li>出稿依頼スプシにチェックを入れる</li>
+  <li>運用者へ報告する</li>
+</ol>
+</div>
+
+<!-- ========== TikTok出稿 種類別差分 ========== -->
+<div id="tiktok-types" class="section">
+<h1>TikTok出稿 — 種類別差分</h1>
+
+<h2>出稿種類の一覧</h2>
+<table>
+  <tr><th>種類</th><th>予算の場所</th><th>難易度</th><th>特徴</th></tr>
+  <tr><td>キャンペーン予算</td><td>キャンペーン階層</td><td>中</td><td>基本形</td></tr>
+  <tr><td>セット予算（最大化）</td><td>広告セット階層</td><td>高</td><td>セットごとに予算配分</td></tr>
+  <tr><td>セット予算（tcpa）</td><td>広告セット階層</td><td>高</td><td>単価目標を指定</td></tr>
+  <tr><td>Smart+</td><td>-</td><td>低</td><td>管理画面で簡易設定</td></tr>
+</table>
+
+<h2>キャンペーン予算（基本形）</h2>
+<p>基本フローそのまま。差分なし。</p>
+
+<h2>セット予算（最大化）</h2>
+<h3>キャンペーン階層</h3>
+<ul><li>キャンペーン予算を選択 → <strong>設定部分は何も選択しない</strong></li></ul>
+<h3>広告セット階層</h3>
+<ul><li>「日予算」に金額を入れる</li></ul>
+
+<h2>セット予算（tcpa）</h2>
+<h3>キャンペーン階層</h3>
+<ul><li>キャンペーン予算を選択 → <strong>設定部分は何も選択しない</strong></li></ul>
+<h3>広告セット階層</h3>
+<ul>
+  <li>「日予算」に金額を入れる</li>
+  <li>入札戦略で<strong>単価目標</strong>を選択し、目標金額を入れる</li>
+</ul>
+
+<h2>Smart+</h2>
+<p>管理画面で簡易的に設定するタイプ。TikTok側のAIが自動最適化する。</p>
+<p><em>※詳細手順は追記予定</em></p>
+</div>
+
+<!-- ========== TikTok出稿 チェックリスト ========== -->
+<div id="tiktok-check" class="section">
+<h1>TikTok出稿 — チェックリスト</h1>
+
+<h2>出稿前チェックリスト</h2>
+<ul class="checklist">
+  <li><strong>キャンペーン名</strong></li>
+  <li><strong>予算金額</strong></li>
+  <li><strong>ピクセル・イベント設定</strong></li>
+  <li><strong>開始日</strong></li>
+  <li><strong>地域</strong></li>
+  <li><strong>年齢</strong></li>
+  <li><strong>性別</strong></li>
+  <li><strong>プレースメント</strong>（TikTokのみONか）</li>
+  <li><strong>動画</strong></li>
+  <li><strong>テキスト</strong></li>
+  <li><strong>URL</strong></li>
+  <li><strong>配信ONになっているか</strong></li>
+</ul>
+</div>
+
+</main>
+
+<script>
+document.querySelectorAll('.sidebar a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const sectionId = link.dataset.section;
+
+    // アクティブ切り替え
+    document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+    link.classList.add('active');
+
+    // セクション表示切り替え
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(sectionId).classList.add('active');
+
+    // スクロールトップに戻す
+    window.scrollTo(0, 0);
+  });
+});
+</script>
+
+</body>
+</html>
