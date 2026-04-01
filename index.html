@@ -110,6 +110,18 @@
     }
     .section { display: none; }
     .section.active { display: block; }
+    .main img {
+      max-width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin: 12px 0;
+    }
+    .main .img-caption {
+      font-size: 13px;
+      color: #777;
+      margin-top: -8px;
+      margin-bottom: 16px;
+    }
 
     @media (max-width: 768px) {
       .sidebar { width: 100%; height: auto; position: relative; }
@@ -129,10 +141,15 @@
   <div class="category">Meta（Facebook）</div>
   <a href="#" data-section="meta-flow">基本フロー</a>
   <a href="#" data-section="meta-types">種類別差分</a>
+  <a href="#" data-section="meta-checklist">チェックリスト</a>
 
   <div class="category">TikTok</div>
   <a href="#" data-section="tiktok-flow">基本フロー</a>
   <a href="#" data-section="tiktok-types">種類別差分</a>
+  <a href="#" data-section="tiktok-checklist">チェックリスト</a>
+
+  <div class="category">テスト</div>
+  <a href="#" data-section="test">テスト出稿・模範解答</a>
 </nav>
 
 <main class="main">
@@ -230,39 +247,112 @@
 
 <h2>Step 1: CRアップロード</h2>
 <p>CRをGoogleドライブからダウンロードし、Meta広告マネージャーのメディアライブラリにアップロードする。</p>
+
+<h3>1-1. 素材のダウンロードと事前準備</h3>
 <ol>
-  <li>出稿したいクリエイティブをGoogleドライブからダウンロードする</li>
-  <li>ビジマネの左上「キャンペーン」に出稿したいアカウント名を検索する</li>
-  <li>左の三本線メニュー → <strong>メディアライブラリ</strong>を開く</li>
-  <li>「広告アカウントのメディア」→ <strong>Select Ad Account</strong> → アカウント名を検索して選択</li>
-  <li><strong>動画</strong> → <strong>Add Media</strong> → <strong>Add video</strong> → ダウンロードしたCRをアップロード</li>
-  <li>緑になって「OK」が出ればアップロード完了</li>
+  <li>出稿依頼スプシで対象キャンペーンの行を確認し、<strong>CRフォルダURL</strong>のリンクからGoogleドライブのフォルダを開く</li>
+  <li>アップロード対象の動画ファイルを<strong>複数選択</strong>する</li>
+  <li>右上の<strong>ダウンロード</strong>アイコンをクリックし、PCのローカル（ダウンロードフォルダ等）に保存する</li>
+  <li>複数ファイルの場合はZIP形式で保存されるので、MacのFinder（またはWindowsのエクスプローラー）で<strong>解凍して動画ファイル（.mp4）を展開</strong>しておく</li>
+  <li>スプシに戻り、対象の<strong>「広告アカウント名」</strong>をコピーしておく</li>
 </ol>
+<img src="assets/step1_01_drive_select.png" alt="Googleドライブでアップロード対象の動画ファイルを複数選択した状態">
+<p class="img-caption">Googleドライブでアップロード対象の動画ファイルを複数選択した状態</p>
+
+<h3>1-2. メディアライブラリを開く</h3>
+<ol start="6">
+  <li>Meta広告マネージャを開き、左側メニューの<strong>「すべてのツール」（三本線アイコン）</strong>をクリック</li>
+  <li>メニュー一覧から<strong>「メディアライブラリ」</strong>を選択</li>
+</ol>
+<img src="assets/step1_02_meta_tools_menu.png" alt="「すべてのツール」を開いた状態">
+<p class="img-caption">「すべてのツール」を開いた状態。左下の「メディアライブラリ」を選択する</p>
+
+<ol start="8">
+  <li>メディアライブラリ画面の左上にある<strong>ビジネスアカウントのプルダウン</strong>を開く</li>
+  <li>先ほどコピーした「広告アカウント名」を検索窓に<strong>貼り付け</strong>、正しい広告アカウントを選択</li>
+</ol>
+<img src="assets/step1_03_account_search.png" alt="アカウント名で検索">
+<p class="img-caption">アカウント名で検索し、該当のビジネスポートフォリオ → 広告アカウントを選択する</p>
+
+<h3>1-3. アップロード</h3>
+<ol start="10">
+  <li>「広告アカウントのメディア」画面で<strong>「動画」タブ</strong>が選択されていることを確認</li>
+  <li><strong>「Add Media（メディアを追加）」</strong> → <strong>「Add Video（動画を追加）」</strong>をクリック → ファイル選択ダイアログが開く</li>
+</ol>
+<img src="assets/step1_04_add_video.png" alt="Add Media → Add Video">
+<p class="img-caption">「動画」タブを選択した状態で「Add Media」→「Add Video」をクリック</p>
+
+<ol start="12">
+  <li>解凍しておいた動画ファイルを<strong>すべて選択</strong>し、「開く」をクリック</li>
+  <li>「アップロード中」のダイアログが表示される → 各ファイルのエンコード処理が進む</li>
+  <li>すべてのステータスが完了（<strong>緑色のバー</strong>）になったら<strong>「OK」</strong>をクリック</li>
+  <li>メディア一覧に、アップロードした動画のサムネイルが表示されていれば完了</li>
+</ol>
+<img src="assets/step1_05_upload_complete.png" alt="アップロード完了">
+<p class="img-caption">3ファイルとも緑バーで処理完了。「OK」をクリックして完了</p>
+
 <h3>ビジマネとアカウントの関係</h3>
+<pre>Business01
+Business03
+Business08    ← ビジマネの中にアカウントが存在する
+Business11
+Business13
+Business14</pre>
 <p>アカウントがどのビジマネに属するかは、<strong>アカウント名の先頭の数字</strong>で判断する。</p>
-<p>例: <code>3-001_TCB-クマ再生注射女性-静止画</code> → <strong>Business03</strong></p>
+<p>例: <code>3-294_出稿練習用アカウント</code> → <strong>Business03</strong></p>
 <div class="note">FBは基本的に<strong>動画のみ</strong>。アップロードには時間がかかる → <strong>待ち時間でStep 2のBeyond記事作成を進める。</strong></div>
 
 <h2>Step 2: Beyond記事作成</h2>
-<p>記事ページを複製し、アフィリンクを設定する。</p>
+<p>Squad beyond上で既存の記事を複製し、新しいキャンペーン用の記事URLを作成する。</p>
 <blockquote>
   <strong>なぜアフィリンクを分けるのか:</strong><br>
   キャンペーンごとに遷移先のURLを分けている。中身は同じだがURLが違う。<br>
   <strong>理由: 効果測定を正確にするため。</strong><br>
-  2種類のキャンペーンで最終的な遷移先が同じだと、CVが発生してもどちらのキャンペーンの成果か測定できなくなる。
+  2種類のキャンペーンで最終的な遷移先が同じだと、CVが発生してもどちらのキャンペーンの成果か測定できなくなる。<br>
+  どのクリエイティブでCVがついたかは非常に重要な情報。それを識別するためにキャンペーンごとにアフィリンクを分ける。
 </blockquote>
+
+<h3>2-1. 複製元記事の確認と検索</h3>
 <ol>
-  <li>Beyondにログインする</li>
-  <li>該当案件のフォルダを開く</li>
-  <li>複製元の記事を複製 → キャンペーン名に修正する</li>
+  <li>出稿依頼スプシで対象案件の<strong>「複製元beyondページ名」</strong>を確認する</li>
+  <li>Squad beyondのダッシュボード（beyondページ）を開く</li>
+  <li>左側のフォルダリストから、該当する案件のフォルダを選択する</li>
+  <li>フォルダ内の記事一覧から、<strong>「複製元beyondページ名」と一致する記事</strong>を探す</li>
+</ol>
+
+<h3>2-2. 記事の複製と名前の変更</h3>
+<ol start="5">
+  <li>該当記事の右側にある<strong>コピーアイコン</strong>をクリック → <strong>「beyondページ複製」</strong>のモーダルが開く</li>
+  <li>スプシに戻り、<strong>「beyondコピペ用CPN名」</strong>列の値をコピーする</li>
+  <li>Squad beyondの複製画面に戻り、<strong>「beyondページ名」の入力欄</strong>に貼り付ける</li>
+  <li>右上の<strong>「複製する」</strong>ボタンをクリック</li>
+</ol>
+
+<h3>2-3. 複製した記事の確認</h3>
+<ol start="9">
+  <li>複製が完了すると、フォルダのリストの<strong>一番上</strong>に新しい記事が追加される</li>
+  <li>新しく作成された記事のタイトルをクリック → <strong>編集画面（エディタ画面）</strong>が開く</li>
+  <li>画面左側の<strong>「Version」パネル</strong>にプレビューが表示されるのを待つ</li>
+  <li>右上の「Versionオプション設定」（歯車アイコン）から<strong>「Version編集」</strong>等を開き、表示に問題がないか確認する</li>
+</ol>
+
+<h3>2-4. アフィリンクの置換</h3>
+<ol start="13">
   <li><strong>version</strong>を開く（別タブで開いた方が楽）</li>
-  <li>「リンク置換」マークを開く → 全て選択 → スプシのアフィリンクを入力 → <strong>置換</strong></li>
-  <li><strong>更新ボタン</strong>を押す（オレンジ → 青になればOK）</li>
-  <li>元のタブに戻って「記事URL」をコピーする</li>
+  <li>「リンク置換」マークを開く → <strong>全て選択</strong> → スプシのアフィリンクを入力 → <strong>置換</strong></li>
+  <li><strong>更新ボタン</strong>を押す（オレンジ → <strong>青になればOK</strong>）</li>
+</ol>
+
+<h3>2-5. 記事URLの取得</h3>
+<ol start="16">
+  <li>元のタブに戻って<strong>「記事URL」</strong>をコピーする</li>
   <li>スプシに貼り付ける</li>
   <li>ドライブURL抽出にドライブURLを貼って実行する</li>
 </ol>
+<blockquote><strong>Tips:</strong> スプレッドシートとSquad beyondの画面を行き来するため、デュアルモニターを使用するか、ウィンドウを左右に並べて作業するとミスを防ぎやすい。</blockquote>
+
 <h3>ポップアップ記事の場合</h3>
+<p>ポップアップ記事の指定がある場合は、アフィリンク置換後に追加作業が必要:</p>
 <ol>
   <li>アフィリンク置換・更新 → 左の「ポップアップ」を選択</li>
   <li>該当のversionを選択 → リンク＋ → 出てきたリンクを選択</li>
@@ -275,7 +365,7 @@
   <li>キャンペーンを作成する</li>
   <li>キャンペーンの目的を選択 → <strong>手動作成の売上キャンペーン</strong></li>
   <li>設計数に合わせて広告セット・広告数を作成する（3つの点 → 複製 → 既存のキャンペーン → 複製したい数 → 複製する）</li>
-  <li>広告セット階層のオーディエンスを切り替える（Advantageオーディエンス → <strong>元のオーディエンスオプション</strong>に切り替え）</li>
+  <li>広告セット階層の<strong>オーディエンス</strong>を切り替える（Advantageオーディエンス → <strong>元のオーディエンスオプション</strong>に切り替え → 「元のオーディエンスを使用」を選択）</li>
 </ol>
 <h3>複製の場合（基本はこちらが多い）</h3>
 <ol>
@@ -309,7 +399,12 @@
   <li><strong>地域・年齢・性別</strong>を設定する
     <ul>
       <li>年齢別: 広告セット名に合わせて年齢を修正 → 下書きとして保存</li>
-      <li>地域別: 1キャンペーンずつ地域（駅名）を選択。駅名で出てこなければ出稿依頼スプシの「店舗一覧」シートから住所検索</li>
+      <li>地域別: 1キャンペーンずつ地域（駅名）を選択していく
+        <ul>
+          <li>駅名検索 → 駅の場所が合っていそうなら選択（違う駅が出ることもあるので<strong>要注意</strong>）→ 範囲選択</li>
+          <li>駅名で出てこなければ出稿依頼スプシの「店舗一覧」シートから住所検索する</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ol>
@@ -332,18 +427,37 @@
   <li><strong>URLパラメーターを作成</strong>する</li>
   <li>キャンペーンコンテンツの <code>{{ad.name}}</code> を選択する</li>
 </ol>
-<blockquote>リファラ = ユーザーがサイトにアクセスする際のリンク元ページ情報。どの広告経由でユーザーが来たかを追跡できる。</blockquote>
+<blockquote>リファラ = ユーザーがサイトにアクセスする際に利用したリンク元のページ情報。これにより、どの広告経由でユーザーが来たかを追跡できる。</blockquote>
 <h3>CR設定</h3>
 <ol>
   <li>広告を全選択 → 編集横の▼ → <strong>メディア</strong></li>
-  <li>修正したい広告を選択 → 広告名をコピー → 検索して該当CRを選択</li>
-  <li>出てきたCRを選択 → 次へ（重複時は<strong>一番左の新しいCR</strong>を選択）</li>
+  <li>修正したい広告を選択 → 広告名をコピー → 検索して該当CRを選択
+    <ul>
+      <li>年齢別: 該当の年齢CR名をコピー</li>
+      <li>地域別: 該当の院・駅名のCR名をコピー</li>
+    </ul>
+  </li>
+  <li>出てきたCRを選択 → 次へ（CRが重複した場合は<strong>一番左の新しいCR</strong>を選択）</li>
   <li>CR全て修正したら<strong>下書きとして保存</strong></li>
 </ol>
 <div class="note"><strong>⚠️ 注意:</strong> グルグル（検索中）の状態だとエラーになる。動画が出てきた後に選択すること。</div>
 
 <h2>Step 6: 確認</h2>
-<p>広告まで作成できたら、依頼内容と一致しているか全項目を確認する。</p>
+<p>広告まで作成できたら、依頼内容と一致しているか全項目を確認する。キャンペーン → 該当のCPNから編集 → 内容が問題ないか確認していく。</p>
+<ul class="checklist">
+  <li>キャンペーン名</li>
+  <li>予算金額</li>
+  <li>データセット・コンバージョン・アトリビューション設定</li>
+  <li>開始日</li>
+  <li>地域</li>
+  <li>年齢</li>
+  <li>性別</li>
+  <li>Facebookページ</li>
+  <li>記事URL（※URLを取り違えると正しくユーザーの計測ができない）</li>
+  <li>動画（正しいCRが入っているか）</li>
+  <li>CPN・広告セット・広告が全て選択されているか</li>
+  <li>配信ONになっているか</li>
+</ul>
 
 <h2>Step 7: 公開</h2>
 <ol>
@@ -387,7 +501,7 @@
 <h3>キャンペーン階層</h3>
 <ul><li>キャンペーン予算: <strong>OFF</strong></li></ul>
 <h3>広告セット階層</h3>
-<ul><li>「1日の予算」に金額を入れる</li></ul>
+<ul><li>「1日の予算」に金額を入れる（キャンペーン階層ではなくセット階層で予算管理）</li></ul>
 <blockquote>
   <strong>なぜセット予算を使うのか:</strong>
   広告セットごとに予算を個別管理したい場合に使う。キャンペーン予算だとMeta側が自動配分するが、セット予算なら各セグメントに均等に予算を使える。
@@ -408,12 +522,12 @@
 
 <h2>ASC（Advantage+ ショッピングキャンペーン）</h2>
 <h3>キャンペーン階層</h3>
-<ol><li>新規作成時に <strong>「Advantage+ ショッピングキャンペーン」</strong> を選択する</li></ol>
+<ol><li>新規作成時に <strong>「Advantage+ ショッピングキャンペーン」</strong> を選択する（通常の「売上」ではない）</li></ol>
 <h3>広告セット階層</h3>
 <ol start="2"><li><strong>広告セット階層なし</strong>（ターゲティング設定なし）— MetaのAIが自動最適化</li></ol>
 <blockquote>
   <strong>なぜASCを使うのか:</strong>
-  ターゲティングをMetaのアルゴリズムに任せることで、手動設定より広いリーチで効率的なCV獲得を狙う。
+  ターゲティングをMetaのアルゴリズムに任せることで、手動設定より広いリーチで効率的なCV獲得を狙う。手動でオーディエンスを設定する必要がないので、設定自体はシンプル。
 </blockquote>
 
 <h2>セールスキャンペーン</h2>
@@ -428,15 +542,60 @@
   <li>広告セット階層の <strong>「広告のリーチを更に限定」</strong> を開く</li>
   <li>設定を切り替える</li>
   <li>ターゲティングがあればターゲティングを設定する</li>
-  <li>設定後に <strong>「提案として使用する」にチェック</strong>を入れる</li>
+  <li>設定後に下に出てくる <strong>「提案として使用する」にチェック</strong>を入れる</li>
 </ol>
 <div class="note">
   <strong>⚠️ 注意:</strong><br>
   ・右のセールスキャンペーンが<strong>3つ全てON</strong>になっているか確認する（1つでも外れていたらオフ）<br>
-  ・逆にキャンペーン予算の通常出稿では「提案として使用する」の<strong>チェックを外す</strong>こと
+  ・逆にキャンペーン予算の通常出稿では「提案として使用する」の<strong>チェックを外す</strong>こと。外さないと意図しないターゲティングに配信してしまう
 </div>
 </div>
 
+<!-- ========== Metaチェックリスト ========== -->
+<div id="meta-checklist" class="section">
+<h1>Meta出稿 — チェックリスト</h1>
+<p>出稿を公開する前に確認すべき全項目と、その確認方法。<br><strong>出稿ミスは直接的な損失につながる。</strong> 公開前の確認は省略しない。</p>
+
+<h2>出稿前チェックリスト</h2>
+<p>出稿前に下記項目を<strong>上から順に</strong>確認 → 公開する。</p>
+
+<h3>キャンペーン階層の確認</h3>
+<ul class="checklist">
+  <li><strong>キャンペーン名</strong> — 左のキャンペーン名を選択し、スプシF列と一致しているか確認</li>
+  <li><strong>予算金額</strong> — キャンペーンの中の予算金額がスプシP列と一致しているか確認</li>
+</ul>
+
+<h3>広告セット階層の確認</h3>
+<p>広告セットを<strong>全選択</strong>して確認する。</p>
+<ul class="checklist">
+  <li><strong>データセット・コンバージョン・アトリビューション設定</strong> — スプシU列の内容と一致しているか</li>
+  <li><strong>開始日</strong> — 翌日の00:00になっているか</li>
+  <li><strong>地域</strong> — 指定通りか（地域別の場合: 編集 → 広告セットをそれぞれ編集 → セットごとの地域を個別確認）</li>
+  <li><strong>年齢</strong> — 指定通りか（年齢別の場合: 確認・編集 → セットごとの年齢を個別確認）</li>
+  <li><strong>性別</strong> — 指定通りか</li>
+</ul>
+
+<h3>広告階層の確認</h3>
+<p>広告を<strong>全選択</strong>して確認する。</p>
+<ul class="checklist">
+  <li><strong>Facebookページ</strong> — 該当案件のページが選択されているか</li>
+  <li><strong>記事URL</strong> — BeyondのURLが正しく入っているか（※URLを取り違えると正しくユーザーの計測ができないので<strong>特に注意</strong>）</li>
+  <li><strong>動画</strong> — 広告を選択して、入っている動画が正しいか確認</li>
+</ul>
+
+<h3>全体の確認</h3>
+<ul class="checklist">
+  <li><strong>CPN・広告セット・広告が全て選択されているか</strong></li>
+  <li><strong>配信ONになっているか</strong> — 全て選択した状態でCPN・広告セット・広告すべてが配信ONか確認</li>
+  <li><strong>該当のCPNが存在しているか</strong></li>
+</ul>
+
+<h2>注意点</h2>
+<div class="note">
+  ・<strong>CR待ちの場合</strong>: CR以外を作成・公開してCRを待つ（公開にしないと他の人が触れなくなるため）<br>
+  ・<strong>右上の「確認して公開」が残っていないか</strong> → 残っていたら正しく配信されていないので該当CPNを確認する
+</div>
+</div>
 
 <!-- ========== TikTok出稿 基本フロー ========== -->
 <div id="tiktok-flow" class="section">
@@ -477,8 +636,9 @@
 <h2>Step 4: 広告セット設定</h2>
 <ol>
   <li>広告セット名を入れる（特に指定なし）</li>
-  <li><strong>手動プレースメント</strong>を選択 → <strong>TikTokのみON</strong>にする</li>
-  <li>ユーザーによるコメント・動画シェアを許可を<strong>OFF</strong>にする</li>
+  <li><strong>手動プレースメント</strong>を選択 → <strong>TikTokのみON</strong>にする
+    <ul><li>ユーザーによるコメント・動画シェアを許可を<strong>OFF</strong>にする</li></ul>
+  </li>
   <li><strong>ロケーション・年齢・性別・言語</strong>を選択する</li>
   <li><strong>開始日</strong>を指定する（翌日0時開始）</li>
 </ol>
@@ -486,13 +646,14 @@
 
 <h2>Step 5: 広告設定</h2>
 <ol>
-  <li><strong>動画を追加</strong> → 検索またはアップロードで動画を選択</li>
+  <li><strong>動画を追加</strong> → 検索またはアップロードで動画を選択していく</li>
   <li><strong>テキスト</strong>を選択する — テキストが出てくればそれを選択、出てこなければ<strong>「ここからのお申込限定」</strong>を入れる</li>
   <li><strong>URL</strong>を入れる（Beyondで作成した記事URL）</li>
+  <li>内容問題なければ<strong>公開</strong>する</li>
 </ol>
 
 <h2>Step 6: 確認 → 公開</h2>
-<p>内容問題なければ<strong>公開</strong>する。公開後:</p>
+<p>公開後:</p>
 <ol>
   <li>出稿依頼スプシにチェックを入れる</li>
   <li>運用者へ報告する</li>
@@ -531,8 +692,262 @@
 </ul>
 
 <h2>Smart+</h2>
-<p>管理画面で簡易的に設定するタイプ。TikTok側のAIが自動最適化する。</p>
-<p><em>※詳細手順は追記予定</em></p>
+<p>管理画面で簡易的に設定するタイプ。TikTok側のAIがターゲティング・入札を自動最適化する。</p>
+<ol>
+  <li>広告 → <strong>＋作成</strong> → <strong>Smart+キャンペーン</strong>を選択</li>
+  <li>キャンペーン目的: <strong>売上</strong> → <strong>Webサイト</strong></li>
+  <li>キャンペーン名・予算を入力</li>
+  <li>ターゲティング（性別・年齢・地域）を設定</li>
+  <li>プレースメント: <strong>TikTok</strong>のみON</li>
+  <li>CR・テキスト・URLを設定</li>
+  <li>内容確認 → 公開</li>
+</ol>
+<blockquote>通常の手動キャンペーンと違い、広告セット階層の細かい設定はTikTokのAIに任せる。設定項目が少ない分シンプルだが、<strong>ターゲティングや予算の指定は正確に行うこと。</strong></blockquote>
+</div>
+
+<!-- ========== TikTokチェックリスト ========== -->
+<div id="tiktok-checklist" class="section">
+<h1>TikTok出稿 — チェックリスト</h1>
+
+<h2>バルク出稿の場合</h2>
+<ul class="checklist">
+  <li>キャンペーン名</li>
+  <li>予算金額</li>
+  <li>ピクセル・イベント設定</li>
+  <li>開始日</li>
+  <li>地域</li>
+  <li>年齢</li>
+  <li>性別</li>
+  <li>プレースメント（TikTokのみONか）</li>
+  <li>動画</li>
+  <li>テキスト</li>
+  <li>URL</li>
+  <li>配信ONになっているか</li>
+</ul>
+
+<h2>Smart+の場合</h2>
+<ul class="checklist">
+  <li>Smart+キャンペーンとして作成されている</li>
+  <li>キャンペーン目的（売上 → Webサイト）</li>
+  <li>キャンペーン名</li>
+  <li>予算金額</li>
+  <li>性別</li>
+  <li>年齢</li>
+  <li>地域</li>
+  <li>プレースメント（TikTokのみONか）</li>
+  <li>動画</li>
+  <li>テキスト</li>
+  <li>URL</li>
+  <li>配信ONになっているか</li>
+</ul>
+</div>
+
+<!-- ========== テスト出稿・模範解答 ========== -->
+<div id="test" class="section">
+<h1>テスト出稿 — 模範解答</h1>
+<p>テスト出稿の答え合わせ用ページ。出稿依頼シートの設定値と、実際の管理画面での設定手順を照合して自己チェックする。</p>
+
+<h2>Meta（FB）テストケース</h2>
+
+<h3>出稿依頼シートの内容</h3>
+<table>
+  <tr><th>項目</th><th>正解値</th></tr>
+  <tr><td>キャンペーン名</td><td>TM4-1_テスト_TCB-ニキビ男性_通常LP_FB_AX340_0406_記事011_テスト</td></tr>
+  <tr><td>広告アカウント</td><td>3-294_出稿練習用アカウント</td></tr>
+  <tr><td>予算種類</td><td>CPN予算</td></tr>
+  <tr><td>キャンペーン目的</td><td>リード生成</td></tr>
+  <tr><td>予算金額</td><td>¥20,000</td></tr>
+  <tr><td>設計</td><td>1-1-n（1キャンペーン・1広告セット・n広告）</td></tr>
+  <tr><td>年齢</td><td>18〜65</td></tr>
+  <tr><td>性別</td><td>男</td></tr>
+  <tr><td>地域</td><td>日本（2km）</td></tr>
+  <tr><td>ピクセル</td><td>TCBメインピクセル</td></tr>
+  <tr><td>コンバージョンイベント</td><td>コンテンツビュー</td></tr>
+  <tr><td>FBページ</td><td>肌悩み相談所2</td></tr>
+  <tr><td>複製元Beyondページ</td><td>★011_TCB-ニキビ男性_0円_臼倉_ステップアンケート_20260119</td></tr>
+</table>
+
+<h3>Step 1: CRアップロードの正解</h3>
+<p><strong>1-1. 素材のダウンロード</strong></p>
+<ol>
+  <li>スプシのCRフォルダURLからGoogleドライブを開く</li>
+  <li>3つの動画ファイルを複数選択 → ダウンロード → ZIP解凍</li>
+</ol>
+<img src="assets/step1_01_drive_select.png" alt="Googleドライブで3ファイルを選択した状態">
+<p class="img-caption">Googleドライブで3ファイルを選択した状態</p>
+
+<p><strong>1-2. メディアライブラリを開く</strong></p>
+<ol start="3">
+  <li>Meta広告マネージャ → 「すべてのツール」→ 「メディアライブラリ」</li>
+</ol>
+<img src="assets/step1_02_meta_tools_menu.png" alt="「すべてのツール」メニュー">
+<p class="img-caption">「すべてのツール」メニュー。左下の「メディアライブラリ」を選択</p>
+
+<ol start="4">
+  <li>プルダウンで「3-294_出稿練習用アカウント」を検索 → Business03配下のアカウントを選択</li>
+</ol>
+<img src="assets/step1_03_account_search.png" alt="アカウント名で検索">
+<p class="img-caption">アカウント名で検索。Business03 → 該当アカウントを選択</p>
+
+<p><strong>1-3. アップロード</strong></p>
+<ol start="5">
+  <li>「動画」タブ → 「Add Media」→「Add Video」</li>
+</ol>
+<img src="assets/step1_04_add_video.png" alt="Add Media → Add Video">
+<p class="img-caption">「動画」タブを選択した状態で「Add Media」→「Add Video」</p>
+
+<ol start="6">
+  <li>解凍した3ファイルを全選択 → アップロード → 緑バーで完了 → 「OK」</li>
+</ol>
+<img src="assets/step1_05_upload_complete.png" alt="アップロード完了">
+<p class="img-caption">3ファイルとも緑バーで処理完了。「OK」をクリック</p>
+
+<h3>Step 2: Beyond記事作成の正解</h3>
+<ol>
+  <li>Squad beyondで「TCBニキビ男性」フォルダを開く</li>
+  <li>「★011_TCB-ニキビ男性_0円_臼倉_ステップアンケート_20260119」を見つける</li>
+  <li>コピーアイコン → 「beyondページ複製」モーダルが開く</li>
+  <li>スプシの「beyondコピペ用CPN名」をコピーして貼り付け → 「複製する」</li>
+  <li>複製された記事を開く → Version パネルでプレビュー確認</li>
+  <li>「リンク置換」→ 全て選択 → スプシのアフィリンクを入力 → 置換</li>
+  <li>更新ボタン（オレンジ → 青になればOK）</li>
+  <li>記事URLをコピー → スプシに貼り付け</li>
+</ol>
+
+<h3>自己チェックリスト（Meta）</h3>
+<p>上から順に自分の設定と照合する。全て一致していればOK。</p>
+
+<p><strong>CRアップロード</strong></p>
+<ul class="checklist">
+  <li>広告アカウントが「3-294_出稿練習用アカウント」（Business03）になっている</li>
+  <li>メディアライブラリの「動画」タブにCRがアップロードされている</li>
+</ul>
+
+<p><strong>Beyond記事作成</strong></p>
+<ul class="checklist">
+  <li>複製元が「★011_TCB-ニキビ男性_0円_臼倉_ステップアンケート_20260119」になっている</li>
+  <li>記事名がスプシの「beyondコピペ用CPN名」と一致している</li>
+  <li>アフィリンクが置換されている（更新ボタンが青になった）</li>
+  <li>記事URLをスプシに貼り付けた</li>
+</ul>
+
+<p><strong>キャンペーン設定</strong></p>
+<ul class="checklist">
+  <li>キャンペーン名がスプシと一致している</li>
+  <li>キャンペーン予算がONで¥20,000が入っている</li>
+  <li>キャンペーン目的が「リード生成」になっている</li>
+</ul>
+
+<p><strong>広告セット設定</strong></p>
+<ul class="checklist">
+  <li>データセットが「TCBメインピクセル」になっている</li>
+  <li>コンバージョンイベントが「コンテンツビュー」になっている</li>
+  <li>開始日が翌日00:00になっている</li>
+  <li>年齢が18〜65になっている</li>
+  <li>性別が「男」になっている</li>
+  <li>地域が「日本」で範囲2kmになっている</li>
+</ul>
+
+<p><strong>広告設定</strong></p>
+<ul class="checklist">
+  <li>FBページが「肌悩み相談所2」になっている</li>
+  <li>記事URLが正しく入っている</li>
+  <li>URLパラメーター（リファラ）が設定されている</li>
+  <li>CRが正しい動画になっている</li>
+</ul>
+
+<p><strong>最終確認</strong></p>
+<ul class="checklist">
+  <li>CPN・広告セット・広告が全て選択されている</li>
+  <li><strong>配信がOFFになっている（テストなので必ずオフ）</strong></li>
+</ul>
+
+<h2>TikTok テストケース</h2>
+
+<h3>出稿依頼シートの内容</h3>
+<table>
+  <tr><th>項目</th><th>正解値</th></tr>
+  <tr><td>キャンペーン名</td><td>TM4-1_テスト_TCB-ニキビ男性_通常LP_TIkTok_AX161_0406_記事011_テスト</td></tr>
+  <tr><td>アカウント</td><td>NHC_出稿練習用</td></tr>
+  <tr><td>キャンペーン目的</td><td>売上</td></tr>
+  <tr><td>CPタイプ</td><td>Smart+</td></tr>
+  <tr><td>設計</td><td>1-1-n（1キャンペーン・1広告セット・n広告）</td></tr>
+  <tr><td>予算</td><td>¥20,000</td></tr>
+  <tr><td>性別</td><td>女性</td></tr>
+  <tr><td>年齢</td><td>18歳〜55歳以上</td></tr>
+  <tr><td>地域</td><td>全域</td></tr>
+  <tr><td>プレースメント</td><td>TikTok</td></tr>
+  <tr><td>複製元Beyondページ</td><td>★011_TCB-ニキビ男性_0円_臼倉_ステップアンケート_20260119</td></tr>
+</table>
+
+<h3>Step 1: CRアップロードの正解</h3>
+<ol>
+  <li>TikTok広告マネージャ → アカウント「NHC_出稿練習用」を選択</li>
+  <li>ツール → クリエイティブライブラリ → CRをアップロード</li>
+</ol>
+
+<h3>Step 2: Beyond記事作成の正解</h3>
+<p>Meta版と同じ手順。複製元・アフィリンクがTikTok用の値になるだけ。</p>
+
+<h3>Step 3: Smart+キャンペーン作成の正解</h3>
+<ol>
+  <li>広告 → ＋作成 → <strong>Smart+キャンペーン</strong>を選択</li>
+  <li>キャンペーン目的: <strong>売上</strong> → <strong>Webサイト</strong></li>
+  <li>キャンペーン名を入力、予算¥20,000</li>
+  <li>性別: 女性、年齢: 18歳〜55歳以上、地域: 全域</li>
+  <li>プレースメント: <strong>TikTokのみON</strong></li>
+  <li>CR・テキスト・URLを設定</li>
+  <li>確認 → 公開（<strong>配信OFF</strong>）</li>
+</ol>
+
+<h3>自己チェックリスト（TikTok）</h3>
+
+<p><strong>CRアップロード</strong></p>
+<ul class="checklist">
+  <li>アカウントが「NHC_出稿練習用」になっている</li>
+  <li>クリエイティブライブラリにCRがアップロードされている</li>
+</ul>
+
+<p><strong>Beyond記事作成</strong></p>
+<ul class="checklist">
+  <li>複製元が正しい</li>
+  <li>アフィリンクが置換されている</li>
+  <li>記事URLをスプシに貼り付けた</li>
+</ul>
+
+<p><strong>キャンペーン設定</strong></p>
+<ul class="checklist">
+  <li>Smart+キャンペーンとして作成されている</li>
+  <li>キャンペーン名がスプシと一致している</li>
+  <li>キャンペーン目的が「売上」→「Webサイト」になっている</li>
+  <li>予算が¥20,000になっている</li>
+</ul>
+
+<p><strong>ターゲティング設定</strong></p>
+<ul class="checklist">
+  <li>性別が「女性」になっている</li>
+  <li>年齢が18歳〜55歳以上になっている</li>
+  <li>地域が「全域」になっている</li>
+  <li>プレースメントが「TikTok」のみONになっている</li>
+</ul>
+
+<p><strong>広告設定</strong></p>
+<ul class="checklist">
+  <li>記事URLが正しく入っている</li>
+  <li>CRが正しい動画になっている</li>
+  <li>テキストが設定されている</li>
+</ul>
+
+<p><strong>最終確認</strong></p>
+<ul class="checklist">
+  <li><strong>配信がOFFになっている（テストなので必ずオフ）</strong></li>
+</ul>
+
+<h2>答え合わせの流れ</h2>
+<pre>1. 自己チェックリストを上から順に全て確認する
+2. 不安な箇所は動画と見比べる
+3. 全てチェックできたら新人同士で相互チェック
+4. 完了したら友利に確認依頼を出す</pre>
 </div>
 
 
