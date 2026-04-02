@@ -964,6 +964,58 @@ Business14</pre>
 <img src="assets/step3_06_fb_budget_input.png" alt="予算入力">
 <p class="img-caption">「1日の予算」に20000を入力。「すべての変更が保存されました」が表示されれば確定済み</p>
 
+<h3>Step 4: 広告セット設定の正解</h3>
+
+<h4>4-1. 広告セット名の変更</h4>
+<ol>
+  <li>左側メニューの<strong>「新しい売上広告セット」</strong>をクリックして広告セットの編集画面を開く</li>
+  <li>画面上部の<strong>「広告セット名」</strong>の入力欄（初期状態では「新しい売上広告セット」と入っている）をクリックする</li>
+  <li>元々入っている文字を消し、半角数字で<strong>「1」</strong>と入力する</li>
+</ol>
+
+<h4>4-2. データセット（ピクセル）とコンバージョンイベントの設定</h4>
+<ol start="4">
+  <li>スプシのタブに切り替えて、T列の<strong>「ピクセル」</strong>とU列の<strong>「コンバージョンイベント」</strong>を確認する
+    <ul><li>今回の正解: ピクセル = <code>TCBメインピクセル</code>、コンバージョンイベント = <code>コンテンツビュー</code></li></ul>
+  </li>
+  <li>広告マネージャの画面に戻り、少し下にスクロールして<strong>「コンバージョン」</strong>のセクションを見つける</li>
+  <li><strong>「コンバージョンの場所」</strong>が<strong>「ウェブサイト」</strong>になっていることを確認する</li>
+  <li><strong>「データセット」</strong>の入力欄をクリックし、スプシで確認したピクセル（<strong>TCBメインピクセル</strong>）を選択する</li>
+  <li>その下の<strong>「コンバージョンイベント」</strong>の入力欄をクリックし、スプシで確認したイベント（<strong>コンテンツビュー</strong>）を選択する</li>
+</ol>
+
+<h4>4-3. アトリビューション設定の変更</h4>
+<ol start="9">
+  <li>「コンバージョンイベント」の少し下にある青文字の<strong>「その他のオプションを表示」</strong>をクリックする</li>
+  <li>表示された<strong>「アトリビューション設定」</strong>の右側にある<strong>鉛筆マーク（編集）</strong>をクリックする</li>
+  <li>設定のプルダウンを開き、以下のように変更する:
+    <ul>
+      <li><strong>クリックスルー</strong>: <strong>「1日間」</strong>を選択</li>
+      <li><strong>ビュースルー（またはエンゲージビュー）</strong>: <strong>「なし」</strong>を選択</li>
+    </ul>
+  </li>
+</ol>
+
+<h4>4-4. 開始日時の設定</h4>
+<ol start="12">
+  <li>さらに下にスクロールし、<strong>「予算と掲載期間」</strong>のセクションを見つける</li>
+  <li><strong>「開始日」</strong>のカレンダーアイコンをクリックし、<strong>翌日の日付</strong>を選択する</li>
+  <li>右側の時間入力欄をクリックし、時間を<strong>「00:00」</strong>に設定する</li>
+</ol>
+
+<h4>4-5. オーディエンス（ターゲティング）の設定</h4>
+<ol start="15">
+  <li>さらに下にスクロールし、<strong>「オーディエンス」</strong>のセクションを見つける</li>
+  <li>右下にある青文字の<strong>「元のオーディエンスオプションに切り替える」</strong>をクリックする</li>
+  <li>確認のポップアップが表示されるので、<strong>「元のオーディエンスを使用」</strong>のボタンをクリックする（画面の表示が切り替わる）</li>
+  <li>スプシに戻り、Q〜R列の<strong>「最小年齢・最大年齢」</strong>とS列の<strong>「性別」</strong>、T列の<strong>「地域」</strong>を確認する
+    <ul><li>今回の正解: 年齢 = <code>18〜65</code>、性別 = <code>男</code>、地域 = <code>日本（2km）</code></li></ul>
+  </li>
+  <li>広告マネージャに戻り、「オーディエンス」内の<strong>「年齢」</strong>の右側にある鉛筆マーク（編集）をクリックし、スプシの通り（<strong>18〜65+</strong>）になっているか確認する</li>
+  <li>続いて<strong>「性別」</strong>の右側にある鉛筆マーク（編集）をクリックし、選択肢の中から<strong>「男性」</strong>を選択する</li>
+  <li><strong>「地域」</strong>で<strong>「日本」</strong>を選択し、範囲を<strong>「2km」</strong>に設定する</li>
+</ol>
+
 <h3>自己チェックリスト（Meta）</h3>
 <p>上から順に自分の設定と照合する。全て一致していればOK。</p>
 
