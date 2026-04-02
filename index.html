@@ -972,6 +972,8 @@ Business14</pre>
   <li>画面上部の<strong>「広告セット名」</strong>の入力欄（初期状態では「新しい売上広告セット」と入っている）をクリックする</li>
   <li>元々入っている文字を消し、半角数字で<strong>「1」</strong>と入力する</li>
 </ol>
+<img src="assets/step4_01_adset_overview.png" alt="広告セット編集画面の全体像">
+<p class="img-caption">広告セット編集画面。広告セット名を「1」に変更し、コンバージョンセクションでデータセットを設定していく</p>
 
 <h4>4-2. データセット（ピクセル）とコンバージョンイベントの設定</h4>
 <ol start="4">
@@ -981,20 +983,38 @@ Business14</pre>
   <li>広告マネージャの画面に戻り、少し下にスクロールして<strong>「コンバージョン」</strong>のセクションを見つける</li>
   <li><strong>「コンバージョンの場所」</strong>が<strong>「ウェブサイト」</strong>になっていることを確認する</li>
   <li><strong>「データセット」</strong>の入力欄をクリックし、スプシで確認したピクセル（<strong>TCBメインピクセル</strong>）を選択する</li>
+</ol>
+<img src="assets/step4_02_dataset_select.png" alt="データセットでTCBメインピクセルを選択">
+<p class="img-caption">「データセット」のプルダウンから「TCBメインピクセル」を選択する</p>
+
+<ol start="8">
   <li>その下の<strong>「コンバージョンイベント」</strong>の入力欄をクリックし、スプシで確認したイベント（<strong>コンテンツビュー</strong>）を選択する</li>
 </ol>
+<img src="assets/step4_03_conversion_event.png" alt="コンバージョンイベントでコンテンツビューを選択">
+<p class="img-caption">「コンバージョンイベント」のプルダウンからActive eventsの「コンテンツビュー」を選択する</p>
+
+<img src="assets/step4_04_conversion_done.png" alt="コンバージョン設定完了後の画面">
+<p class="img-caption">データセット・コンバージョンイベント設定完了後の画面。下部の青文字「その他の設定を表示」をクリックする</p>
 
 <h4>4-3. アトリビューション設定の変更</h4>
 <ol start="9">
-  <li>「コンバージョンイベント」の少し下にある青文字の<strong>「その他のオプションを表示」</strong>をクリックする</li>
+  <li>「コンバージョンイベント」の少し下にある青文字の<strong>「その他の設定を表示」</strong>をクリックする</li>
   <li>表示された<strong>「アトリビューション設定」</strong>の右側にある<strong>鉛筆マーク（編集）</strong>をクリックする</li>
+</ol>
+<img src="assets/step4_05_attribution_default.png" alt="アトリビューション設定のデフォルト値">
+<p class="img-caption">「その他の設定を表示」を開いた状態。アトリビューション設定の鉛筆マークをクリックして編集する</p>
+
+<ol start="11">
   <li>設定のプルダウンを開き、以下のように変更する:
     <ul>
       <li><strong>クリックスルー</strong>: <strong>「1日間」</strong>を選択</li>
-      <li><strong>ビュースルー（またはエンゲージビュー）</strong>: <strong>「なし」</strong>を選択</li>
+      <li><strong>エンゲージビュー（動画のみ）</strong>: <strong>「なし」</strong>を選択</li>
+      <li><strong>ビュースルー</strong>: <strong>「なし」</strong>を選択</li>
     </ul>
   </li>
 </ol>
+<img src="assets/step4_06_attribution_edited.png" alt="アトリビューション設定変更後">
+<p class="img-caption">アトリビューション設定を変更した状態。クリックスルー「1日間」、エンゲージビュー・ビュースルーともに「なし」</p>
 
 <h4>4-4. 開始日時の設定</h4>
 <ol start="12">
@@ -1002,19 +1022,43 @@ Business14</pre>
   <li><strong>「開始日」</strong>のカレンダーアイコンをクリックし、<strong>翌日の日付</strong>を選択する</li>
   <li>右側の時間入力欄をクリックし、時間を<strong>「00:00」</strong>に設定する</li>
 </ol>
+<img src="assets/step4_07_schedule.png" alt="開始日時を翌日00:00に設定">
+<p class="img-caption">開始日時を翌日の00:00に設定。終了日時は設定しない</p>
 
 <h4>4-5. オーディエンス（ターゲティング）の設定</h4>
 <ol start="15">
   <li>さらに下にスクロールし、<strong>「オーディエンス」</strong>のセクションを見つける</li>
-  <li>右下にある青文字の<strong>「元のオーディエンスオプションに切り替える」</strong>をクリックする</li>
-  <li>確認のポップアップが表示されるので、<strong>「元のオーディエンスを使用」</strong>のボタンをクリックする（画面の表示が切り替わる）</li>
-  <li>スプシに戻り、Q〜R列の<strong>「最小年齢・最大年齢」</strong>とS列の<strong>「性別」</strong>、T列の<strong>「地域」</strong>を確認する
-    <ul><li>今回の正解: 年齢 = <code>18〜65</code>、性別 = <code>男</code>、地域 = <code>日本（2km）</code></li></ul>
-  </li>
-  <li>広告マネージャに戻り、「オーディエンス」内の<strong>「年齢」</strong>の右側にある鉛筆マーク（編集）をクリックし、スプシの通り（<strong>18〜65+</strong>）になっているか確認する</li>
-  <li>続いて<strong>「性別」</strong>の右側にある鉛筆マーク（編集）をクリックし、選択肢の中から<strong>「男性」</strong>を選択する</li>
-  <li><strong>「地域」</strong>で<strong>「日本」</strong>を選択し、範囲を<strong>「2km」</strong>に設定する</li>
 </ol>
+<img src="assets/step4_08_audience_overview.png" alt="オーディエンスセクションの全体像">
+<p class="img-caption">オーディエンスセクション。Advantage+がオンの状態で、制御欄に地域「日本」が表示されている</p>
+
+<ol start="16">
+  <li>左下にある<strong>「広告のリーチをさらに限定」</strong>をクリックする</li>
+  <li><strong>「優先オーディエンスにリーチする」</strong>ポップアップが表示される → <strong>「広告のリーチをさらに限定」</strong>が選択されていることを確認し、<strong>「次へ」</strong>をクリックする</li>
+</ol>
+<img src="assets/step4_09_audience_restrict.png" alt="優先オーディエンスにリーチするポップアップ">
+<p class="img-caption">ポップアップで「広告のリーチをさらに限定」を選択して「次へ」をクリック</p>
+
+<ol start="18">
+  <li>スプシに戻り、Q〜R列の<strong>「最小年齢・最大年齢」</strong>とS列の<strong>「性別」</strong>、T列の<strong>「地域」</strong>を確認する
+    <ul><li>今回の正解: 年齢 = <code>18〜65</code>、性別 = <code>男</code>、地域 = <code>日本</code></li></ul>
+  </li>
+  <li>広告マネージャに戻り、<strong>「年齢」</strong>をクリックして展開し、左のプルダウンを<strong>「18」</strong>、右のプルダウンを<strong>「65+」</strong>に設定する</li>
+</ol>
+<img src="assets/step4_10_audience_age.png" alt="年齢を18〜65+に設定">
+<p class="img-caption">年齢を18〜65+に設定した状態</p>
+
+<ol start="20">
+  <li><strong>「性別」</strong>をクリックして展開し、<strong>「男性」</strong>を選択する</li>
+</ol>
+<img src="assets/step4_11_audience_gender.png" alt="性別で男性を選択">
+<p class="img-caption">性別で「男性」を選択した状態</p>
+
+<ol start="21">
+  <li><strong>「地域」</strong>をクリックして展開し、<strong>「日本」</strong>が設定されていることを確認する</li>
+</ol>
+<img src="assets/step4_12_audience_complete.png" alt="オーディエンス設定完了">
+<p class="img-caption">オーディエンス設定完了の状態。地域「日本」、年齢18〜65+、性別「男性」</p>
 
 <h3>自己チェックリスト（Meta）</h3>
 <p>上から順に自分の設定と照合する。全て一致していればOK。</p>
@@ -1047,7 +1091,7 @@ Business14</pre>
   <li>開始日が翌日00:00になっている</li>
   <li>年齢が18〜65になっている</li>
   <li>性別が「男」になっている</li>
-  <li>地域が「日本」で範囲2kmになっている</li>
+  <li>地域が「日本」になっている</li>
 </ul>
 
 <p><strong>広告設定</strong></p>
