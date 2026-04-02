@@ -1213,6 +1213,87 @@ Business14</pre>
 
 <div class="note"><strong>ポイント:</strong> 広告の操作では「一括編集」と「個別編集」を使い分ける。今どの広告を編集しているのか、「すべて選択する」「1つだけ選択する」という点に注意して進めること。</div>
 
+<h3>Step 6: 確認→公開の正解</h3>
+
+<p>広告まで作成できたら、依頼内容と一致しているか全項目を確認する。<strong>テスト出稿では配信をONにしない。</strong></p>
+
+<hr class="step-divider">
+<h4>6-1. キャンペーン階層の確認</h4>
+<ol>
+  <li>広告マネージャの左側メニューで<strong>「キャンペーン」タブ</strong>を選択する</li>
+  <li>作成したキャンペーンを選択し、<strong>「編集」</strong>をクリックする</li>
+  <li>以下の項目がスプシの内容と一致しているか確認する:
+    <ul>
+      <li><strong>キャンペーン名</strong> — スプシE列と一致しているか</li>
+      <li><strong>キャンペーン目的</strong> — 「売上」になっているか</li>
+      <li><strong>予算</strong> — 「キャンペーンの予算」がONで、¥20,000が入っているか</li>
+    </ul>
+  </li>
+</ol>
+
+<hr class="step-divider">
+<h4>6-2. 広告セット階層の確認</h4>
+<ol start="4">
+  <li><strong>「広告セット」タブ</strong>に切り替え、広告セットを選択して<strong>「編集」</strong>をクリックする</li>
+  <li>以下の項目を確認する:
+    <ul>
+      <li><strong>データセット</strong> — 「TCBメインピクセル」になっているか</li>
+      <li><strong>コンバージョンイベント</strong> — 「コンテンツビュー」になっているか</li>
+      <li><strong>開始日</strong> — 翌日00:00になっているか</li>
+      <li><strong>地域</strong> — 「日本」になっているか</li>
+      <li><strong>年齢</strong> — 18〜65になっているか</li>
+      <li><strong>性別</strong> — 「男性」になっているか</li>
+    </ul>
+  </li>
+</ol>
+
+<hr class="step-divider">
+<h4>6-3. 広告階層の確認</h4>
+<ol start="6">
+  <li><strong>「広告」タブ</strong>に切り替え、広告を1つずつ選択して<strong>「編集」</strong>をクリックする</li>
+  <li>以下の項目を確認する:
+    <ul>
+      <li><strong>Facebookページ</strong> — 「肌悩み相談所2」になっているか</li>
+      <li><strong>記事URL</strong> — Beyondで作成したURLが入っているか</li>
+      <li><strong>動画（CR）</strong> — 広告名と一致する動画が設定されているか（3つとも確認）</li>
+      <li><strong>URLパラメーター</strong> — キャンペーンコンテンツに<code>{{ad.name}}</code>が設定されているか</li>
+    </ul>
+  </li>
+</ol>
+
+<hr class="step-divider">
+<h4>6-4. 公開とキャンペーンのオフ</h4>
+<ol start="8">
+  <li>全ての確認が終わったら、<strong>キャンペーン・広告セット・広告が全て選択された状態</strong>で、右上の<strong>「確認して公開」</strong>をクリックする</li>
+</ol>
+<img src="assets/step6_01_final_confirmation.png" alt="確認して公開の画面">
+<p class="img-caption">キャンペーン・広告セット・広告が全て選択された状態。配信「オフ」、予算¥20,000を確認し、右上の「確認して公開」をクリック</p>
+
+<ol start="9">
+  <li>編集画面の右下にある<strong>「公開する」</strong>ボタンをクリックする</li>
+</ol>
+<img src="assets/step6_02_publish_button.png" alt="公開するボタン">
+<p class="img-caption">編集画面の右下「公開する」をクリック。左側に3つの広告、右側にキャンペーンの推奨事項が表示されている状態</p>
+
+<ol start="10">
+  <li>公開が完了したら、キャンペーンの<strong>配信ステータスを「オフ」</strong>にする
+    <ul>
+      <li>キャンペーン一覧で該当キャンペーンの<strong>「配信」列のトグル</strong>がオフになっていることを確認する</li>
+      <li>もしオンになっていたら、クリックして<strong>オフに切り替える</strong></li>
+    </ul>
+  </li>
+  <li>自己チェックリスト（下記）を上から順に全て確認する</li>
+  <li>全てチェックできたら、<strong>友利に確認依頼</strong>を出す</li>
+</ol>
+
+<div class="note">
+  <strong>⚠️ テスト出稿の注意:</strong> 「確認して公開」を押しただけでは広告は配信されない（ステータスがオフのため）。ただし、<strong>配信ステータスが万が一オンになっていると実際に広告費が消化される</strong>ので、公開後に必ずオフであることを確認すること。
+</div>
+
+<div class="note">
+  <strong>本番の場合:</strong> 本番の出稿では「確認して公開」後に配信を<strong>ON</strong>にする。公開後、出稿依頼スプシにチェックを入れて運用者へ報告する。右上に「確認して公開」が残っていないか要注意（残っていたら正しく配信されていない）。
+</div>
+
 <h3>自己チェックリスト（Meta）</h3>
 <p>上から順に自分の設定と照合する。全て一致していればOK。</p>
 
