@@ -376,6 +376,11 @@ Business14</pre>
   <li>設計数に合わせて広告セット・広告数を作成する（3つの点 → 複製 → 既存のキャンペーン → 複製したい数 → 複製する）</li>
   <li>広告セット階層の<strong>オーディエンス</strong>を切り替える（Advantageオーディエンス → <strong>元のオーディエンスオプション</strong>に切り替え → 「元のオーディエンスを使用」を選択）</li>
 </ol>
+<img src="assets/step3_01_fb_create.png" alt="キャンペーン作成">
+<p class="img-caption">「+作成」ボタンからキャンペーンを新規作成する</p>
+<img src="assets/step3_02_fb_objective.png" alt="キャンペーン目的の選択">
+<p class="img-caption">キャンペーンの目的で「売上」を選択する</p>
+
 <h3>複製の場合（基本はこちらが多い）</h3>
 <ol>
   <li>キャンペーン名にあるキーワードでキャンペーンを絞る（運用者名、年齢など）</li>
@@ -387,6 +392,8 @@ Business14</pre>
   <li>スプシN列が「キャンペーン予算」なら、キャンペーン予算を<strong>ON</strong>にしてP列の金額を記入する</li>
   <li>設計数に合わせて広告セット・広告数を増やす or 削除する</li>
 </ol>
+<img src="assets/step3_04_fb_campaign_name.png" alt="キャンペーン名と予算">
+<p class="img-caption">キャンペーン名を入力し、予算を設定する</p>
 
 <h2>Step 4: 広告セット設定</h2>
 <h3>広告セット名の修正</h3>
@@ -404,7 +411,19 @@ Business14</pre>
 <ol start="3">
   <li>全て選択 → <strong>編集</strong></li>
   <li><strong>ウェブサイト</strong> → データセット・コンバージョンイベント・アトリビューション設定はスプシU列の内容を選択</li>
+</ol>
+<img src="assets/step4_02_dataset_select.png" alt="データセット選択">
+<p class="img-caption">「データセット」のプルダウンから該当のピクセルを選択する</p>
+<img src="assets/step4_03_conversion_event.png" alt="コンバージョンイベント選択">
+<p class="img-caption">「コンバージョンイベント」のプルダウンからスプシU列のイベントを選択する</p>
+
+<ol start="5">
   <li><strong>開始日</strong>は翌日の00:00</li>
+</ol>
+<img src="assets/step4_07_schedule.png" alt="開始日設定">
+<p class="img-caption">開始日を翌日の00:00に設定する</p>
+
+<ol start="6">
   <li><strong>地域・年齢・性別</strong>を設定する
     <ul>
       <li>年齢別: 広告セット名に合わせて年齢を修正 → 下書きとして保存</li>
@@ -417,6 +436,11 @@ Business14</pre>
     </ul>
   </li>
 </ol>
+<img src="assets/step4_10_audience_age.png" alt="年齢設定">
+<p class="img-caption">年齢の範囲を設定する</p>
+<img src="assets/step4_11_audience_gender.png" alt="性別設定">
+<p class="img-caption">性別を設定する</p>
+
 <div class="note">
   <strong>⚠️ 注意:</strong> セールスキャンペーンが使用できるアカウントでキャンペーン予算出稿する場合は、<strong>「提案として使用する」のチェックを外す</strong>。外さないと意図しないターゲティングに配信してしまう。
 </div>
@@ -424,19 +448,33 @@ Business14</pre>
 <h2>Step 5: 広告設定</h2>
 <h3>広告名の修正</h3>
 <p>広告名を広告セット名に合わせて修正する（例: 広告セット名が「52」なら、広告名も「52」）</p>
+<img src="assets/step5_03_bulk_edit_menu.png" alt="一括編集メニューで名前を選択">
+<p class="img-caption">広告を全選択し、「編集▼」→「名前」で一括変更する</p>
+
 <h3>ページ選択</h3>
 <p>出稿依頼シートに記載されているページ名、またはDBシートの「FBページ」シートで該当案件のページを検索</p>
+<img src="assets/step5_10_page_select.png" alt="Facebookページ選択">
+<p class="img-caption">「選択したすべての広告を編集」のプルダウンで該当のFBページを選択する</p>
+
 <h3>URL設定</h3>
 <ol>
   <li>広告のURLを修正する: 全て選択 → 編集横の▼ → <strong>ウェブサイトURL</strong></li>
   <li>Beyondで作成した記事URLを貼る → 下書きとして保存</li>
 </ol>
+<img src="assets/step5_12_website_url_edit.png" alt="ウェブサイトURL一括編集">
+<p class="img-caption">「選択したすべての広告を編集」行にBeyondの記事URLを貼り付ける</p>
+
 <h3>リファラ設定</h3>
 <ol>
   <li><strong>URLパラメーターを作成</strong>する</li>
   <li>キャンペーンコンテンツの <code>{{ad.name}}</code> を選択する</li>
 </ol>
+<img src="assets/step5_14_tracking_section.png" alt="トラッキングセクション">
+<p class="img-caption">トラッキングセクションの「URLパラメーターを作成」をクリック</p>
+<img src="assets/step5_15_url_params_dropdown.png" alt="URLパラメーター選択">
+<p class="img-caption">キャンペーンコンテンツで「{{ad.name}}」を選択する</p>
 <blockquote>リファラ = ユーザーがサイトにアクセスする際に利用したリンク元のページ情報。これにより、どの広告経由でユーザーが来たかを追跡できる。</blockquote>
+
 <h3>CR設定</h3>
 <ol>
   <li>広告を全選択 → 編集横の▼ → <strong>メディア</strong></li>
@@ -449,6 +487,10 @@ Business14</pre>
   <li>出てきたCRを選択 → 次へ（CRが重複した場合は<strong>一番左の新しいCR</strong>を選択）</li>
   <li>CR全て修正したら<strong>下書きとして保存</strong></li>
 </ol>
+<img src="assets/step5_06_edit_media_menu.png" alt="メディア一括編集メニュー">
+<p class="img-caption">「編集▼」→「メディア」を選択してCRを設定する</p>
+<img src="assets/step5_08_video_select.png" alt="動画選択ダイアログ">
+<p class="img-caption">広告名で検索して該当動画を選択し「次へ」をクリック</p>
 <div class="note"><strong>⚠️ 注意:</strong> グルグル（検索中）の状態だとエラーになる。動画が出てきた後に選択すること。</div>
 
 <h2>Step 6: 確認</h2>
@@ -470,7 +512,16 @@ Business14</pre>
 
 <h2>Step 7: 公開</h2>
 <ol>
-  <li>内容が問題なければ<strong>公開</strong>する</li>
+  <li>内容が問題なければ右上の<strong>「確認して公開」</strong>をクリックする</li>
+</ol>
+<img src="assets/step6_01_final_confirmation.png" alt="確認して公開">
+<p class="img-caption">キャンペーン・広告セット・広告が全て選択された状態で「確認して公開」をクリック</p>
+<ol start="2">
+  <li>編集画面の右下にある<strong>「公開する」</strong>ボタンをクリックする</li>
+</ol>
+<img src="assets/step6_02_publish_button.png" alt="公開するボタン">
+<p class="img-caption">右下の「公開する」をクリックして公開する</p>
+<ol start="3">
   <li>配信オフになっていたら配信を<strong>ON</strong>にする</li>
   <li>出稿依頼スプシにチェックを入れる</li>
   <li>運用者へ報告する</li>
