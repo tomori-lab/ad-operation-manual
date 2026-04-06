@@ -933,18 +933,8 @@ Business14</pre>
 <p class="img-caption">誘導先URLにBeyond記事URLを貼り付けた状態</p>
 
 <ol start="4">
-  <li><strong>URLパラメーターを構築</strong> — URL入力欄の下にある「URLパラメーターを構築」をクリックし、以下を設定:
-    <ul>
-      <li>キャンペーンソース (utm_source): <strong>「tiktok」</strong></li>
-      <li>キャンペーンメディア (utm_medium): <strong>「paid」</strong></li>
-      <li>キャンペーン名 (utm_campaign): <strong>「{{campaign.name}}」</strong></li>
-      <li>キャンペーンコンテンツ (utm_content): <strong>「{{ad.name}}」</strong></li>
-    </ul>
-    設定後「保存」をクリック
-  </li>
+  <li><strong>URLパラメーター</strong>は全て<strong>OFF</strong>にする（追加済みURLパラメータが「URLパラメータなし」の状態にする）</li>
 </ol>
-<img src="assets/tik_step5_02_url_params.png" alt="URLパラメーター構築">
-<p class="img-caption">URLパラメーター構築画面で utm_source, utm_medium, utm_campaign, utm_content を設定</p>
 
 <ol start="5">
   <li><strong>誘導アクション</strong>を設定する — 「標準」を選択し、指定のアクション（例:「詳細を見る」）のみにチェック</li>
@@ -1908,21 +1898,12 @@ Business14</pre>
 <img src="assets/tik_step5_03_url_input.png" alt="URL入力済み画面">
 <p class="img-caption">誘導先URLにBeyond記事URLを貼り付けた状態。下の「URLパラメータを構築」をクリックしてトラッキング設定へ進む</p>
 
-<h4>5-3. URLパラメーター（トラッキング）を設定する</h4>
+<h4>5-3. URLパラメーターをOFFにする</h4>
 <ol start="6">
-  <li>URL入力欄の下にある<strong>「URLパラメーターを構築」</strong>というボタンをクリックする</li>
-  <li>設定のポップアップ画面が表示されるので、以下の通りに各項目のプルダウン（選択肢）から値を選ぶ:
-    <ul>
-      <li>キャンペーンソース (utm_source): <strong>「tiktok」</strong>を選択</li>
-      <li>キャンペーンメディア (utm_medium): <strong>「paid」</strong>を選択</li>
-      <li>キャンペーン名 (utm_campaign): <strong>「{{campaign.name}}」</strong>を選択（※広告のキャンペーン名が抽出されます）</li>
-      <li>キャンペーンコンテンツ (utm_content): <strong>「{{ad.name}}」</strong>を選択（※広告名が抽出されます）</li>
-    </ul>
-  </li>
-  <li>画面右下の<strong>「保存」</strong>ボタンをクリックする</li>
+  <li>追加済みURLパラメータが<strong>「URLパラメータなし」</strong>の状態であることを確認する。もしパラメータが設定されている場合は、全て<strong>OFF</strong>にする</li>
 </ol>
-<img src="assets/tik_step5_02_url_params.png" alt="URL・URLパラメーター設定済み">
-<p class="img-caption">記事URLとURLパラメーター（4件のUTMパラメータ）が設定された状態。下の「クリエイティブアセット」で動画を追加する</p>
+<img src="assets/tik_step5_03_url_input.png" alt="URLパラメータなしの状態">
+<p class="img-caption">追加済みURLパラメータが「URLパラメータなし」になっていればOK</p>
 
 <h4>5-4. 動画素材をライブラリから選択する</h4>
 <ol start="9">
@@ -2021,7 +2002,7 @@ Business14</pre>
 <ul class="checklist">
   <li>広告名が「1」になっている</li>
   <li>記事URLが正しく入っている</li>
-  <li>URLパラメーターが設定されている（utm_source=tiktok、utm_medium=paid、utm_campaign={{campaign.name}}、utm_content={{ad.name}}）</li>
+  <li>URLパラメーターがOFF（「URLパラメータなし」）になっている</li>
   <li>CRが正しい動画3つになっている</li>
   <li>テキストが設定されている</li>
   <li>誘導アクションが「標準」で指定のアクションのみチェックされている</li>
