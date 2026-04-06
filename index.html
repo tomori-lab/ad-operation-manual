@@ -141,6 +141,127 @@
       .sidebar { width: 100%; height: auto; position: relative; }
       .main { margin-left: 0; padding: 20px; }
       body { flex-direction: column; }
+      .chat-window { width: calc(100vw - 24px) !important; right: 12px !important; bottom: 72px !important; }
+    }
+
+    /* チャットボット */
+    .chat-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #1a1a2e;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+    .chat-toggle:hover { transform: scale(1.1); }
+
+    .chat-window {
+      position: fixed;
+      bottom: 90px;
+      right: 24px;
+      width: 380px;
+      height: 500px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .chat-window.open { display: flex; }
+
+    .chat-header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .chat-header button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chat-msg {
+      max-width: 85%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .chat-msg.user {
+      align-self: flex-end;
+      background: #1a1a2e;
+      color: #fff;
+      border-bottom-right-radius: 4px;
+    }
+    .chat-msg.bot {
+      align-self: flex-start;
+      background: #f0f0f0;
+      color: #333;
+      border-bottom-left-radius: 4px;
+    }
+    .chat-msg.bot.loading {
+      color: #999;
+      font-style: italic;
+    }
+
+    .chat-input-area {
+      display: flex;
+      border-top: 1px solid #e0e0e0;
+      padding: 8px;
+      gap: 8px;
+    }
+    .chat-input-area input {
+      flex: 1;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13px;
+      outline: none;
+    }
+    .chat-input-area input:focus { border-color: #1a1a2e; }
+    .chat-input-area button {
+      background: #1a1a2e;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .chat-input-area button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
   </style>
 </head>
@@ -204,6 +325,36 @@
   <li><strong>消化金額を抑えてCVを取るほど利益が大きくなる</strong></li>
 </ul>
 
+<h2>CV計測の2つの仕組み</h2>
+<p>出稿した広告の成果（CV）がどう計測されるか。現在、2つの方式が混在している。</p>
+
+<h3>旧方式（ASPリンク）</h3>
+<ul>
+  <li>ASPが発行するアフィリンクを使う</li>
+  <li>キャンペーンごとにリンクを分ける（1CP = 1リンク）</li>
+  <li>CP名の一部で成果を突き合わせる</li>
+  <li>リンクを分けないとどのCPのCVか特定できない</li>
+</ul>
+
+<h3>新方式（CATS）</h3>
+<ul>
+  <li>第三者計測ツール「CATS」を使う</li>
+  <li>媒体が発行するCPID/ADIDでCVを紐づけ</li>
+  <li>同じ案件なら1つの記事URLで全CP運用可能</li>
+  <li>リンク管理の工数が大幅に減る</li>
+</ul>
+
+<h3>見分け方: キャンペーン名の「AXAD」</h3>
+<ul>
+  <li>旧: <code>TM2-1_白井_エミナル_A地域直LP_TikTok_<strong>AX049</strong>_0117_記事013_...</code> → ASP番号 → 旧方式</li>
+  <li>新: <code>TM1-2_加藤_TCB-脂肪溶解_通常LP_FB_<strong>AXAD01</strong>_0112_記事002_...</code> → AXAD → 新方式（CATS）</li>
+</ul>
+
+<div class="note">
+<strong>覚え方:</strong> キャンペーン名に「AXAD」が入っていれば → CATS（新方式）。入っていなければ → 旧方式（ASPリンク）。<br>
+全てのリンクがCATS連携できるわけではない（ASP側の対応状況による）ので、当面は新旧が混在する。
+</div>
+
 <h2>キャンペーン・広告セット・広告の構造</h2>
 <pre>キャンペーン
 └── 広告セット
@@ -215,6 +366,22 @@
   <tr><td>広告</td><td>配信物</td><td>CR（動画）、記事URL、ページ</td></tr>
 </table>
 <p>この3つが全て設定されて初めて広告が配信される。基本は<strong>翌日0時から</strong>配信開始。</p>
+
+<h2>キャンペーン構造の型</h2>
+<p>表記: キャンペーン数 - 広告セット数 - 広告数。依頼時に「1-1-Nで」のように指示されるので、この読み方を覚える。</p>
+<table>
+  <tr><th>型</th><th>意味</th><th>用途</th></tr>
+  <tr><td><strong>1-1-1</strong></td><td>最小構成</td><td>単体テスト</td></tr>
+  <tr><td><strong>1-1-N</strong></td><td>同じターゲットでCR比較</td><td>複数CRのA/Bテスト</td></tr>
+  <tr><td><strong>1-N-1</strong></td><td>同じCRでターゲット比較</td><td>年齢別・地域別の検証</td></tr>
+  <tr><td><strong>1-N-N</strong></td><td>ターゲット×CRの組み合わせ</td><td>本格的な検証</td></tr>
+</table>
+<h3>1-1-N の例（同じターゲットで複数CR比較）</h3>
+<pre>キャンペーン
+└── 広告セット（25-34歳・女性・関東）
+    ├── 広告A
+    ├── 広告B
+    └── 広告C</pre>
 
 <h2>心構え</h2>
 <ol>
@@ -1857,6 +2024,22 @@ Business14</pre>
 
 </main>
 
+<!-- チャットボット -->
+<button class="chat-toggle" id="chatToggle" title="質問する">💬</button>
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <span>マニュアルに質問する</span>
+    <button id="chatClose">&times;</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">マニュアルについて何でも聞いてください。例:「TikTokのプレースメント設定はどうする？」</div>
+  </div>
+  <div class="chat-input-area">
+    <input type="text" id="chatInput" placeholder="質問を入力..." autocomplete="off">
+    <button id="chatSend">送信</button>
+  </div>
+</div>
+
 <script>
 document.querySelectorAll('.sidebar a').forEach(link => {
   link.addEventListener('click', e => {
@@ -1875,6 +2058,71 @@ document.querySelectorAll('.sidebar a').forEach(link => {
     window.scrollTo(0, 0);
   });
 });
+// チャットボット
+const CHAT_API = 'https://ad-manual-chatbot.adkanri.workers.dev';
+const chatToggle = document.getElementById('chatToggle');
+const chatWindow = document.getElementById('chatWindow');
+const chatClose = document.getElementById('chatClose');
+const chatMessages = document.getElementById('chatMessages');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+let chatHistory = [];
+
+chatToggle.addEventListener('click', () => {
+  chatWindow.classList.toggle('open');
+  if (chatWindow.classList.contains('open')) chatInput.focus();
+});
+chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
+
+chatInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.isComposing) sendMessage();
+});
+chatSend.addEventListener('click', sendMessage);
+
+async function sendMessage() {
+  const text = chatInput.value.trim();
+  if (!text) return;
+
+  appendMsg(text, 'user');
+  chatInput.value = '';
+  chatSend.disabled = true;
+
+  chatHistory.push({ role: 'user', content: text });
+
+  const loadingEl = appendMsg('回答を考えています...', 'bot loading');
+
+  try {
+    const res = await fetch(CHAT_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: chatHistory }),
+    });
+    const data = await res.json();
+
+    loadingEl.remove();
+
+    if (data.reply) {
+      appendMsg(data.reply, 'bot');
+      chatHistory.push({ role: 'assistant', content: data.reply });
+    } else {
+      appendMsg('エラーが発生しました: ' + (data.error || '不明なエラー'), 'bot');
+    }
+  } catch (err) {
+    loadingEl.remove();
+    appendMsg('通信エラーが発生しました。', 'bot');
+  }
+
+  chatSend.disabled = false;
+}
+
+function appendMsg(text, cls) {
+  const div = document.createElement('div');
+  div.className = 'chat-msg ' + cls;
+  div.textContent = text;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  return div;
+}
 </script>
 
 </body>
