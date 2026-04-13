@@ -472,6 +472,7 @@
 </ol>
 <img src="assets/step1_05_upload_complete.png" alt="アップロード完了">
 <p class="img-caption">3ファイルとも緑バーで処理完了。「OK」をクリックして完了</p>
+<div class="note"><strong>注意:</strong> 稀にアップロードがうまくいかないことがある。その時はもう1回やり直す。</div>
 
 <h3>ビジマネとアカウントの関係</h3>
 <pre>Business01
@@ -493,6 +494,7 @@ Business14</pre>
   2種類のキャンペーンで最終的な遷移先が同じだと、CVが発生してもどちらのキャンペーンの成果か測定できなくなる。<br>
   どのクリエイティブでCVがついたかは非常に重要な情報。それを識別するためにキャンペーンごとにアフィリンクを分ける。
 </blockquote>
+<div class="note"><strong>CATS導入案件の場合:</strong> CATS導入済みの案件はBeyond記事の作成もURLパラメーターの設定も不要。</div>
 
 <h3>2-1. 複製元記事の確認と検索</h3>
 <ol>
@@ -532,6 +534,7 @@ Business14</pre>
 <p class="img-caption">アフィリンクを入力して「置換」をクリック</p>
 <img src="assets/step2_08_beyond_update_button.png" alt="更新ボタン">
 <p class="img-caption">更新ボタンを押す。オレンジ→青に変われば置換完了</p>
+<div class="note"><strong>注意:</strong> 「全て選択」した時にたまに会社概要のリンクも反応してしまうことがある。判断がつかなければ確認を取る。</div>
 
 <h3>2-5. 記事URLの取得</h3>
 <ol start="16">
@@ -546,6 +549,7 @@ Business14</pre>
 <blockquote><strong>Tips:</strong> スプレッドシートとSquad beyondの画面を行き来するため、デュアルモニターを使用するか、ウィンドウを左右に並べて作業するとミスを防ぎやすい。</blockquote>
 
 <h3>ポップアップ記事の場合</h3>
+<div class="note"><strong>見分け方:</strong> 複製元の記事名に「PU」がついていれば大体ポップアップ付き。ただし稀に命名規則が間違っていることもあるので要注意。</div>
 <p>ポップアップ記事の指定がある場合は、アフィリンク置換後に追加作業が必要:</p>
 <ol>
   <li>アフィリンク置換・更新 → 左の「ポップアップ」を選択</li>
@@ -583,6 +587,7 @@ Business14</pre>
 </ol>
 <img src="assets/step3_04_fb_campaign_name.png" alt="キャンペーン名と予算">
 <p class="img-caption">キャンペーン名を入力し、予算を設定する</p>
+<div class="note"><strong>⚠️ 注意:</strong> 日予算は0時〜23:59分までに使う金額。たまに桁が大きい金額で入っていることがあるので、小数点・桁数に要注意。</div>
 
 <h2>Step 4: 広告セット設定</h2>
 <h3>広告セット名の修正</h3>
@@ -603,8 +608,10 @@ Business14</pre>
 </ol>
 <img src="assets/step4_02_dataset_select.png" alt="データセット選択">
 <p class="img-caption">「データセット」のプルダウンから該当のピクセルを選択する</p>
+<div class="note">指定されたピクセルが出てこない場合はアド管理に報告する。</div>
 <img src="assets/step4_03_conversion_event.png" alt="コンバージョンイベント選択">
 <p class="img-caption">「コンバージョンイベント」のプルダウンから指定のイベントを選択する</p>
+<div class="note">現在の推奨設定は「1日-なし-なし」。運用者の数値感に基づく設定のため、今後変わる可能性がある。</div>
 
 <ol start="5">
   <li><strong>開始日</strong>は翌日の00:00</li>
@@ -633,6 +640,7 @@ Business14</pre>
 <div class="note">
   <strong>⚠️ 注意:</strong> セールスキャンペーンが使用できるアカウントでキャンペーン予算出稿する場合は、<strong>「提案として使用する」のチェックを外す</strong>。外さないと意図しないターゲティングに配信してしまう。
 </div>
+<div class="note"><strong>なぜ外すのか:</strong> チェックが入っているとAIのおすすめで配信される。例えばニキビ男性の案件なのに「この広告いい感じだから女性にも出そう」とAIが判断してしまう。</div>
 
 <h2>Step 5: 広告設定</h2>
 <h3>広告名の修正</h3>
@@ -644,6 +652,7 @@ Business14</pre>
 <p>出稿依頼シートに記載されているページ名、またはDBシートの「FBページ」シートで該当案件のページを検索</p>
 <img src="assets/step5_10_page_select.png" alt="Facebookページ選択">
 <p class="img-caption">「選択したすべての広告を編集」のプルダウンで該当のFBページを選択する</p>
+<div class="note">使いたいページが出てこない、または「確認中」になる場合はアド管理に問い合わせる。</div>
 
 <h3>URL設定</h3>
 <ol>
@@ -718,6 +727,10 @@ Business14</pre>
   <strong>注意:</strong><br>
   ・右上の「確認して公開」が残っていないか要注意 → 残っていたら正しく配信されていない
 </div>
+<div class="note"><strong>配信漏れの原因で多いもの:</strong><br>
+① ステータスがオフになっていた<br>
+② 広告セットだけを選択した状態で公開した（キャンペーン・広告セット・広告を全て選択しないと配信されない）</div>
+<div class="note"><strong>確認のコツ:</strong> 全選択した時に「複数のステータス」（オン/オフが混在）と表示されたら、一部がオフになっている。全部オンになっているか確認してから公開する。</div>
 </div>
 
 <!-- ========== Meta出稿 種類別差分 ========== -->
@@ -827,6 +840,7 @@ Business14</pre>
 <div id="tiktok-flow" class="section">
 <h1>TikTok出稿 — 基本フロー（Smart+）</h1>
 <p>TikTok広告の<strong>Smart+キャンペーン</strong>での出稿の一連の流れ。Meta出稿と似た構造だが、<strong>管理画面の操作とキャンペーン構造が異なる</strong>。</p>
+<div class="note"><strong>TikTokの注意点:</strong> TikTokはUIの変更・アップデートが頻繁にある。画面が違っても基本的にやることは同じなので、わからなければ聞く。また、動画を勝手におすすめで追加されることがあるので、自分が選択していない動画が入っていたら削除する。</div>
 
 <h2>出稿の全体像</h2>
 <pre>CR数と設計数確認 → CRアップロード → Beyond記事作成 → キャンペーン作成 → 広告セット設定 → 広告設定 → 確認 → 公開</pre>
@@ -847,6 +861,7 @@ Business14</pre>
 </ol>
 <img src="assets/tik_step1_01_account_search.png" alt="アカウント検索">
 <p class="img-caption">アカウント一覧の検索窓にアカウント名を入力して選択</p>
+<div class="note">アカウントが検索しても出てこない場合は、権限が付与されていない可能性がある。アド管理に依頼する。</div>
 
 <ol start="2">
   <li>左上 <strong>ツール</strong> → <strong>クリエイティブライブラリ</strong>を選択</li>
@@ -862,6 +877,7 @@ Business14</pre>
 
 <img src="assets/tik_step1_05_upload_complete.png" alt="アップロード完了">
 <p class="img-caption">アップロード完了。緑のチェックマークがついた状態</p>
+<div class="note"><strong>注意:</strong> ファイル名に濁点が入っているとMacでエラーになることがある。アップロードできなかったら報告する。</div>
 
 <h2>Step 2: Beyond記事作成</h2>
 <p>Meta出稿と同じ手順。</p>
@@ -885,6 +901,7 @@ Business14</pre>
 </ol>
 <img src="assets/tik_step3_04_name_budget.png" alt="キャンペーン名と予算">
 <p class="img-caption">キャンペーン名と日予算を入力した状態</p>
+<div class="note"><strong>注意:</strong> たまに「続行」と「公開する」ボタンが並んでいることがある。間違えて「公開する」を押さないように注意。</div>
 
 <h2>Step 4: 広告セット設定</h2>
 <ol>
@@ -904,6 +921,7 @@ Business14</pre>
 </ol>
 <img src="assets/tik_step4_05b_age_gender.png" alt="年齢・性別設定">
 <p class="img-caption">年齢と性別を設定した状態</p>
+<div class="note"><strong>MetaとTikTokの違い:</strong> Metaは1歳単位で年齢を切れるが、TikTokは10歳単位（18-24、25-34等）でしか切れない。</div>
 
 <ol start="4">
   <li><strong>開始日</strong>を指定する（翌日0時開始）</li>
